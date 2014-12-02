@@ -1,6 +1,7 @@
 #### A responsive base theme for Wharton Django applications.
 - Version: 1.0
 - To be added to your Django application and customized to your needs.
+
 ##### Technologies: 
 - Twitter Bootstrap
 - HTML5 Boilerplate 
