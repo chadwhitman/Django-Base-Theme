@@ -2,15 +2,15 @@
 - Version: 1.0
 - To be added to your Django application and customized to your needs.
 
-##### Components & Standards: 
-- Twitter Bootstrap
+##### Technologies: 
+- Twitter Bootstrap 3
 - HTML5 Boilerplate 
 - HTML5 & CSS3
 - SASS/SCSS (compiled via Compass)
 - jQuery
 - modernizer.js
 - respond.js
-- fonts from fontpro.com
+- Fonts from fontpro.com (Open Font License)
 
 #### Update settings.py file
 
@@ -45,7 +45,9 @@ to get the latest files.
 #### Installation via Git Clone
 
 If you don't want to pip install, you can always just clone the repo into your project and move
-the files where you want them.
+the files where you want them. <br />
+
+Our stash repo: https://stash.wharton.upenn.edu/projects/WCIT/repos/django-base-theme/browse
 
 #### If you installed via pip, to override template files:
 		
@@ -70,4 +72,11 @@ urlpatterns = patterns('',
     url(r'^$', BaseView.as_view()),
     url(r'^admin/', include(admin.site.urls)),
 )
-</code></pre> 
+</code></pre>
+
+#### Updating your project's stylesheets
+You can update the styles via the SASS files (file extension .scss):
+- Directory path --> 'static/scss/scss/example-folder/example-file.scss'
+Or if you don't want to use SASS (or just need to add a few custom styles), you could add your custom styles here:
+- Directory path --> 'static/scss/compiled_css/custom.css'
+Note: Don't add styles to 'compiled_css/all.css' directly, as they could potentially get overwritten when SASS is compiled. 
