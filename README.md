@@ -43,7 +43,7 @@ TEMPLATE_DIRS = (
 
 #### Installation via Git Clone
 
-If you don't want to pip install base_theme, you can always just simply clone the repo into your project and move <br />
+If you don't want to pip install, you can always just clone the repo into your project and move
 the files where you want them.
 
 #### If you installed via pip, to override template files:
