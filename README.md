@@ -14,12 +14,6 @@
 
 #### Update settings.py file
 
-##### Add the following to the 'Installed_Apps' section: 
-
-<pre><code>'bootstrap3',
-'base_theme',
-</code></pre>
-
 ##### Add the following to the bottom of your settings.py file:
 
 <pre><code>STATIC_URL = '/static/'
@@ -31,15 +25,22 @@ TEMPLATE_DIRS = (
 )
 </code></pre>
 
+##### Add the following to the 'Installed_Apps' section: 
+
+<pre><code>'bootstrap3',
+'base_theme',
+</code></pre>
+
 #### Installation via pip
 
 1.) pip install git+https://github.com/chadwhitman/Base-Theme.git
 
-2.) Add 'base_theme' to 'Installed Apps' in your project's 'settings.py' file.
+2.) pip install django-bootstrap3 
 
-3.) Run 'python manage.py collectstatic' to update your static files in your project directory.
+4.) Run 'python manage.py collectstatic' to update your static files in your project directory.
 
-4.) pip install django-bootstrap3
+Note: if you already have these apps installed, you may need to add '--upgrade' to the end of the pip install <br />
+to get the latest files.
 
 #### Installation via Git Clone
 
@@ -49,7 +50,7 @@ the files where you want them.
 #### If you installed via pip, to override template files:
 		
 Add a 'templates' folder in your project's directory, include the template you want to <br />
-override in that folder (i.e. base.html) and then customize it to your needs.
+override in that folder (i.e. templates/base.html) and then customize it to your needs.
 
 #### Initial Test View/Url Configuration
 
