@@ -39,9 +39,11 @@ TEMPLATE_DIRS = (
 
 3.) Run 'python manage.py collectstatic' to update your static files in your project directory.
 
+4.) pip install django-bootstrap3
+
 #### Installation via Git Clone
 
-If you don't want to pip install, you can always just simply clone the repo into your project and move <br />
+If you don't want to pip install base_theme, you can always just simply clone the repo into your project and move <br />
 the files where you want them.
 
 #### If you installed via pip, to override template files:
