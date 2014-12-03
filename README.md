@@ -2,7 +2,7 @@
 - Version: 1.0
 - To be added to your Django application and customized to your needs.
 
-##### Technologies: 
+##### Components & Standards: 
 - Twitter Bootstrap
 - HTML5 Boilerplate 
 - HTML5 & CSS3
