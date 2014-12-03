@@ -37,7 +37,7 @@ TEMPLATE_DIRS = (
 
 2.) pip install django-bootstrap3 
 
-4.) Run 'python manage.py collectstatic' to update your static files in your project directory.
+3.) Run 'python manage.py collectstatic' to update your static files in your project directory.
 
 Note: if you already have these apps installed, you may need to add '--upgrade' to the end of the pip install
 to get the latest files.
