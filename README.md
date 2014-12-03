@@ -80,4 +80,5 @@ You can update the styles via the SASS files (file extension .scss):
 
 Or if you don't want to use SASS (or just need to add a few custom styles), you could add your custom styles here:
 - Directory path --> 'static/scss/compiled_css/custom.css'
+
 Note: Don't add styles to 'compiled_css/all.css' directly, as they could potentially get overwritten when SASS is compiled. 
