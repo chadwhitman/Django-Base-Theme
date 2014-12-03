@@ -16,9 +16,7 @@
 
 ##### Add the following to the 'Installed_Apps' section: 
 
-<pre><code>'debug_toolbar',
-'bootstrap3',
-'rest_framework',
+<pre><code>'bootstrap3',
 'base_theme',
 </code></pre>
 
@@ -46,7 +44,7 @@ TEMPLATE_DIRS = (
 If you don't want to pip install, you can always just simply clone the repo into your project and move <br />
 the files where you want them.
 
-#### To override template files:
+#### If you installed via pip, to override template files:
 		
 Add a 'templates' folder in your project's directory, include the template you want to <br />
 override in that folder (i.e. base.html) and then customize it to your needs.
