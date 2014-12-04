@@ -47,8 +47,6 @@ to get the latest files.
 If you don't want to pip install, you can always just clone the repo into your project and move
 the files where you want them. <br />
 
-Our stash repo: https://stash.wharton.upenn.edu/projects/WCIT/repos/django-base-theme/browse
-
 #### If you installed Base Theme via pip, to override template files:
 		
 Add a 'templates' folder in your project's directory, include the template you want to <br />
