@@ -2,7 +2,7 @@
 - Version: 1.0
 - To be added to your Django application and customized to your needs.
 
-##### Technologies: 
+##### Components & Standards: 
 - Twitter Bootstrap 3
 - HTML5 Boilerplate 
 - HTML5 & CSS3
@@ -49,7 +49,7 @@ the files where you want them. <br />
 
 Our stash repo: https://stash.wharton.upenn.edu/projects/WCIT/repos/django-base-theme/browse
 
-#### If you installed via pip, to override template files:
+#### If you installed Base Theme via pip, to override template files:
 		
 Add a 'templates' folder in your project's directory, include the template you want to <br />
 override in that folder (i.e. templates/base.html) and then customize it to your needs.
