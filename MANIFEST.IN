@@ -1,4 +1,2 @@
 recursive-include base_theme/static *
 recursive-include base_theme/templates *
-recursive-include base_theme *.css *.scss *.html *.png *.gif *js *jpg *jpeg *svg *py *.ico
-recursive-include base_theme *.html
