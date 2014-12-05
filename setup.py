@@ -10,7 +10,7 @@ setup(
     include_package_data=True,
     license='BSD License',
     description="A responsive base theme for Wharton Django applications.",
-    url='https://github.com/chadwhitman/Base-Theme/',
+    url='https://github.com/chadwhitman/Base-Theme',
     author='Chad Whitman, the Wharton School',
     classifiers=[
         'Environment :: Web Environment',
