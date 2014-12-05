@@ -1,2 +1,3 @@
 recursive-include base_theme/static *
 recursive-include base_theme/templates *
+recursive-include base_theme/ *
