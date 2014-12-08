@@ -8,11 +8,11 @@
 - HTML5 & CSS3
 - SASS/SCSS (compiled via Compass)
 - jQuery
-- modernizer.js
-- respond.js
+- Modernizer.js
+- Respond.js
 - Fonts from fontpro.com (Open Font License)
 
-#### Update settings.py file
+#### Update your project's settings.py file
 
 ##### Add the following to the bottom of your settings.py file:
 
@@ -34,6 +34,12 @@ TEMPLATE_DIRS = (
 #### Installation via pip
 
 1.) pip install git+https://github.com/chadwhitman/Base-Theme.git
+	
+	- Troubleshooting: You may need to specify the the directory you want to install base-theme when working in a virtualenv on Vagrant.
+		
+		- For example:
+			
+			pip install git+https://github.com/chadwhitman/Base-Theme.git -t /home/vagrant/.virtualenvs/name-of-app/lib/python3.3/site-packages/
 
 2.) pip install django-bootstrap3 
 
@@ -45,7 +51,7 @@ to get the latest files.
 #### Installation via Git Clone
 
 If you don't want to pip install, you can always just clone the repo into your project and move
-the files where you want them. <br />
+the files where you want them.
 
 #### If you installed Base Theme via pip, to override template files:
 		
