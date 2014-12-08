@@ -6,12 +6,16 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name='base_theme',
     version='1.0',
-    packages=['base_theme',],
+    packages=['base_theme'],
     include_package_data=True,
     license='BSD License',
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
+    data_files = [('/home/vagrant/mysite/templates', ['base_theme/templates/base.html']),],
+    package_data={'base_theme': ['templates/*',
+    ]},
+    zip_safe = False,
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
