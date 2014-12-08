@@ -34,8 +34,9 @@ TEMPLATE_DIRS = (
 #### Installation via pip
 
 1.) pip install git+https://github.com/chadwhitman/Base-Theme.git
-	
-	- Troubleshooting: You may need to specify the the directory you want to install base-theme when working in a virtualenv on Vagrant.
+
+	- Troubleshooting: You may need to specify the the directory you want to 
+	  install base-theme when working in a virtualenv on Vagrant.
 		
 		- For example:
 			
