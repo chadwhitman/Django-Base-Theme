@@ -12,7 +12,6 @@ setup(
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
-    data_files = [('/home/vagrant/mysite/templates', ['base_theme/templates/base.html']),],
     package_data={'base_theme': ['templates/*',
     ]},
     zip_safe = False,
