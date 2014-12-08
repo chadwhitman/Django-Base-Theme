@@ -14,7 +14,7 @@ setup(
     author='Chad Whitman, the Wharton School',
     data_files = [('/home/vagrant/mysite/templates', ['base_theme/templates/base.html']),],
     package_data={'base_theme': ['templates/*',
-      ]}
+    ]},
     zip_safe = False,
     classifiers=[
         'Environment :: Web Environment',
