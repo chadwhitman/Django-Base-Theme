@@ -6,7 +6,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name='base_theme',
     version='1.0',
-    packages=['base_theme'],
+    packages=find_packages(),
     include_package_data=True,
     license='BSD License',
     description="A responsive base theme for Wharton Django applications.",
