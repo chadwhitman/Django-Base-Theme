@@ -34,30 +34,23 @@ TEMPLATE_DIRS = (
 #### Installation via pip
 
 1.) pip install git+https://github.com/chadwhitman/Base-Theme.git
-
-	- Troubleshooting: You may need to specify the the directory you want to 
-	  install base-theme when working in a virtualenv on Vagrant.
-		
-		- For example:
-			
-			pip install git+https://github.com/chadwhitman/Base-Theme.git -t /home/vagrant/.virtualenvs/name-of-app/lib/python3.3/site-packages/
-
+	
 2.) pip install django-bootstrap3 
 
 3.) Run 'python manage.py collectstatic' to update your static files in your project directory.
 
-Note: if you already have these apps installed, you may need to add '--upgrade' to the end of the pip install
-to get the latest files.
+You may need to add '--upgrade' to the end of the pip install to get the latest files.
 
 #### Installation via Git Clone
 
 If you don't want to pip install, you can always just clone the repo into your project and move
 the files where you want them.
 
-#### If you installed Base Theme via pip, to override template files:
+#### To customize your app's templates:
 		
-Add a 'templates' folder in your project's directory, include the template you want to <br />
-override in that folder (i.e. templates/base.html) and then customize it to your needs.
+Add a directory for your app in the templates folder and extend your base.html off of the original base, customizing 
+where you need to. You 'base.html' has a few layout options which you can find in the 'templates/layout_options' folder.
+
 
 #### Initial Test View/Url Configuration
 
@@ -66,7 +59,7 @@ This is just an example:
 <pre><code>from django.views.generic import TemplateView
 
 class BaseView(TemplateView):
-    template_name = "base.html"
+    template_name = "your_app/left_sidebar.html" 
 </code></pre>
     
 And in your urls.py file:
