@@ -5,7 +5,7 @@ from distutils.core import setup
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-template_dir = os.path.join(BASE_DIR, "templates")
+TEMPLATE_DIRS = os.path.join(BASE_DIR, "templates")
 
 setup(
     name='base_theme',
@@ -16,7 +16,7 @@ setup(
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
-    data_files = [(template_dir, ['base_theme/templates/base.html']),],
+    data_files = [(TEMPLATE_DIRS, ['base_theme/templates/base.html']),],
     zip_safe = False,
     classifiers=[
         'Environment :: Web Environment',
