@@ -19,7 +19,6 @@ setup(
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
     data_files = dataFiles,
-    zip_safe = False,
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
