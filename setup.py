@@ -4,8 +4,12 @@ from distutils.core import setup
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-data_folder = os.path.join(BASE_DIR, '/templates/')
+#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+#data_folder = os.path.join(BASE_DIR, '/templates/')
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+data_folder = os.path.join(BASE_DIR, 'templates')
+
 setup(
     name='base_theme',
     version='1.0',
