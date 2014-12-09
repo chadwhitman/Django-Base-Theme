@@ -4,8 +4,11 @@ from distutils.core import setup
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #data_folder = os.path.join(BASE_DIR, '/templates/')
+
+datadir = os.path.join('templates','app')
+datafiles = [(datadir, [f for f in glob.glob(os.path.join(datadir, '*'))])]
 
 setup(
     name='base_theme',
@@ -16,7 +19,7 @@ setup(
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
-    data_files = [(BASE_DIR + '/templates', ['base_theme/templates/base.html']),],
+    data_files = datafiles,
     zip_safe = False,
     classifiers=[
         'Environment :: Web Environment',
