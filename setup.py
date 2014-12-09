@@ -5,7 +5,7 @@ from distutils.core import setup
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-data_folder = os.path.join(BASE_DIR, 'templates')
+data_folder = os.path.join(BASE_DIR, '/templates/')
 setup(
     name='base_theme',
     version='1.0',
