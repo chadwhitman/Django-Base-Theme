@@ -4,7 +4,7 @@ from distutils.core import setup
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname('__file__'))
 TEMPLATE_DIRS = os.path.join(BASE_DIR, "templates")
 
 setup(
