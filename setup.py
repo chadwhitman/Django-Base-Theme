@@ -7,7 +7,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath('__file__'), os.pardir)))
 realpath = os.path.dirname(os.path.realpath('__file__'))
 TEMPLATE_DIRS = os.path.join(realpath, "templates")
 
-dataFiles = [(realpath + '/templates', ['base_theme/templates/base.html']),]
+dataFiles = [(TEMPLATE_DIRS, ['base_theme/templates/base.html']),]
 
 setup(
     name='base_theme',
