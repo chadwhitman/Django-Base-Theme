@@ -1,13 +1,7 @@
 import os
 from setuptools import setup
-from distutils.core import setup
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath('__file__'), os.pardir)))
-
-realpath = os.path.dirname(os.path.realpath('__file__'))
-TEMPLATE_DIRS = os.path.join(realpath, 'templates')
-
-dataFiles = [(os.path.join(realpath, 'templates'), ['base_theme/templates/base.html']),]
 
 setup(
     name='base_theme',
@@ -18,7 +12,6 @@ setup(
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
-    data_files =  [(TEMPLATE_DIRS, ['base_theme/templates/base.html']),],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
