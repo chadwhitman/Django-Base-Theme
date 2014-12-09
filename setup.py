@@ -5,11 +5,7 @@ from distutils.core import setup
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)
-
+data_folder = os.path.join(BASE_DIR, 'templates')
 setup(
     name='base_theme',
     version='1.0',
@@ -19,7 +15,7 @@ setup(
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
-    data_files = [('/home/vagrant/mysite/templates', ['base_theme/templates/base.html']),],
+    data_files = [(data_folder, ['base_theme/templates/base.html']),],
     zip_safe = False,
     classifiers=[
         'Environment :: Web Environment',
