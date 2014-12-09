@@ -7,7 +7,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath('__file__'), os.pardir)))
 realpath = os.path.dirname(os.path.realpath('__file__'))
 TEMPLATE_DIRS = os.path.join(realpath, "templates")
 
-#dataFiles = [(realpath + '/templates', ['base_theme/templates/base.html']),],
+dataFiles = [(realpath + '/templates', ['base_theme/templates/base.html']),],
 
 setup(
     name='base_theme',
@@ -18,7 +18,7 @@ setup(
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
-    data_files = [('/home/vagrant/mysite/templates', ['base_theme/templates/base.html']),],
+    data_files = dataFiles,
     zip_safe = False,
     classifiers=[
         'Environment :: Web Environment',
