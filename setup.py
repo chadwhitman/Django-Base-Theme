@@ -18,7 +18,7 @@ setup(
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
-    data_files =  [(TEMPLATE_DIRS, ['base_theme/templates/base.html']),],,
+    data_files =  [(TEMPLATE_DIRS, ['base_theme/templates/base.html']),],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
