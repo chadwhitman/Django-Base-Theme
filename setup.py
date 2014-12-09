@@ -10,8 +10,6 @@ TEMPLATE_DIRS = os.path.join(realpath, "templates")
 dataFiles = [(str(TEMPLATE_DIRS), ['base_theme/templates/base.html']),]
 
 setup(
-    realpath = os.path.dirname(os.path.realpath('__file__'))
-    TEMPLATE_DIRS = os.path.join(realpath, "templates")
     name='base_theme',
     version='1.0',
     packages=['base_theme'],
