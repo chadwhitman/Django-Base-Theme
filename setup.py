@@ -2,10 +2,10 @@ import os
 from setuptools import setup
 from distutils.core import setup
 # allow setup.py to be run from any path
-os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+os.chdir(os.path.normpath(os.path.join(os.path.abspath('__file__'), os.pardir)))
 
-BASE_DIR = os.path.dirname(os.path.dirname('__file__'))
-TEMPLATE_DIRS = os.path.join(BASE_DIR, "templates")
+realpath = os.path.dirname(os.path.realpath('__file__'))
+TEMPLATE_DIRS = os.path.join(realpath, "templates")
 
 setup(
     name='base_theme',
