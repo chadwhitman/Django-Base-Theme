@@ -49,8 +49,7 @@ the files where you want them.
 #### To customize your app's templates:
 		
 Add a directory for your app in the templates folder and extend your base.html off of the original base, customizing 
-where you need to. You 'base.html' has a few layout options which you can find in the 'templates/layout_options' folder.
-
+where you need to. You can find layout options for your base.html in the 'templates/layout_options' directory.
 
 #### Initial Test View/Url Configuration
 
@@ -59,7 +58,7 @@ This is just an example:
 <pre><code>from django.views.generic import TemplateView
 
 class BaseView(TemplateView):
-    template_name = "your_app/left_sidebar.html" 
+    template_name = "your_app/base.html" 
 </code></pre>
     
 And in your urls.py file:
