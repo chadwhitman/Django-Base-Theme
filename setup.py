@@ -8,8 +8,8 @@ setup(
     version='1.0',
     packages=['base_theme'],
     package_data={'base_theme': [
-        'templates/base.html',
-        'templates/your_app/base.html',
+        'templates/*.html',
+        'templates/your_app/*.html',
         'templates/layout_options/*.html',
         'static/bootstrap_css/*.css',
         'static/fonts/*.*',
