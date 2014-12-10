@@ -8,8 +8,10 @@ setup(
     version='1.0',
     packages=['base_theme'],
     package_data={'base_theme': [
-        'templates/*',
-        'static/*',
+        'templates/base.html',
+        'templates/README.text',
+        'templates/your-app/base.html',
+        'templates/layout_options/*.html',
     ]},
     include_package_data=True,
     license='BSD License',
