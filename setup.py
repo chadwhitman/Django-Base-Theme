@@ -3,15 +3,12 @@ from setuptools import setup
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath('__file__'), os.pardir)))
 
-import base_theme
-
 setup(
     name='base_theme',
     version='1.0',
     packages=['base_theme'],
     include_package_data=True,
     license='BSD License',
-    zip_safe=False,
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
     author='Chad Whitman, the Wharton School',
