@@ -1,6 +1,6 @@
 import os
 from setuptools import setup
-# allow setup.py to be run from any path
+
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
@@ -8,7 +8,29 @@ setup(
     version='1.0',
     packages=['base_theme'],
     package_data={'base_theme': [
-        'templates/*',
+        'templates/*.html',
+        'templates/your_app/*.html',
+        'templates/layout_options/*.html',
+        'static/bootstrap_css/*.css',
+        'static/fonts/*.*',
+        'static/fonts/bask/*.*',
+        'static/fonts/lato/*.*',
+        'static/fonts/lus/*.*',
+        'static/fonts/mont/*.*',
+        'static/img/bg/*.*',
+        'static/img/footer/*.png',
+        'static/img/logo/*.png',
+        'static/img/social/*.png',
+        'static/js/*.js',
+        'static/js/vendor/*.js',
+        'static/scss/compiled_css/*.css',
+        'static/scss/scss/*.scss',
+        'static/scss/scss/base/*.scss',
+        'static/scss/scss/components/*.scss',
+        'static/scss/scss/helpers/*.scss',
+        'static/scss/scss/layout/*.scss',
+        'static/scss/scss/layout/header/*.scss',
+        'static/scss/config.rb',
     ]},
     include_package_data=True,
     license='BSD License',
