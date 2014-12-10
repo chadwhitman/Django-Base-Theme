@@ -1,13 +1,12 @@
 import os
-import sys
 from setuptools import setup
-from distutils.core import setup
 # allow setup.py to be run from any path
+os.chdir(os.path.normpath(os.path.join(os.path.abspath('__file__'), os.pardir)))
 
 setup(
     name='base_theme',
     version='1.0',
-    packages=['base_theme',],
+    packages=['base_theme'],
     include_package_data=True,
     license='BSD License',
     zip_safe=False,
