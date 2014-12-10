@@ -7,6 +7,9 @@ setup(
     name='base_theme',
     version='1.0',
     packages=['base_theme'],
+    package_data={'base_theme': [
+        'templates/base.html',
+    ]},
     include_package_data=True,
     license='BSD License',
     description="A responsive base theme for Wharton Django applications.",
