@@ -1,12 +1,15 @@
 import os
 from setuptools import setup
 # allow setup.py to be run from any path
-os.chdir(os.path.normpath(os.path.join(os.path.abspath('__file__'), os.pardir)))
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='base_theme',
     version='1.0',
     packages=['base_theme'],
+    package_data={'base_theme': [
+        'templates/*',
+    ]},
     include_package_data=True,
     license='BSD License',
     description="A responsive base theme for Wharton Django applications.",
