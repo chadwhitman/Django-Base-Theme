@@ -30,6 +30,7 @@ setup(
         'static/scss/scss/helpers/*.scss',
         'static/scss/scss/layout/*.scss',
         'static/scss/scss/layout/header/*.scss',
+        'static/*.*',
         'static/scss/config.rb',
     ]},
     include_package_data=True,
