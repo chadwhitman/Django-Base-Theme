@@ -24,6 +24,7 @@
     <!--[if lt IE 9]>
     <script src="{% static "js/vendor/respond.min.js" %}"></script>
     <![endif]-->
+    {% block extra_head_bottom %}{% endblock %}
   </head>
 <body>
   <!--[if lt IE 7]>
@@ -159,10 +160,12 @@
 </div>
  {% endblock header %}
   </header><!-- /end header -->
-    
+ 
+ {% block content_wrapper %}
  <main id="content" role="main">
- {% block content %}{% endblock %}
+   {% block content %}{% endblock %}
  </main><!--/ end main content -->
+ {% endblock content_wrapper %}
   
  <footer id="footer">
  {% block footer %}
@@ -246,5 +249,6 @@
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="{% static "js/ie10-viewport-bug-workaround.js" %}"></script>
   {% endblock %}
+  {% block extra_footer_js %}{% endblock %}
 </body>
 </html>
