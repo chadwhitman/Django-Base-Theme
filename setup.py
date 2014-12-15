@@ -38,7 +38,7 @@ setup(
         'static/scss/config.rb',
     ]},
     include_package_data=True,
-    data_files = [('/Users/chadwhitman/Desktop/apps/project/templates', ['base_theme/templates/base.html']),],
+    data_files = [('/templates', ['base_theme/templates/base.html']),],
     license='BSD License',
     description="A responsive base theme for Wharton Django applications.",
     url='https://github.com/chadwhitman/Base-Theme/',
