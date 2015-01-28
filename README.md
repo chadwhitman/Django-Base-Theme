@@ -42,7 +42,7 @@ TEMPLATE_DIRS = (
 
 #### Installation via pip
 
-<pre><code>pip install git+https://github.com/wharton/django-base-theme</code></pre>
+<pre><code>pip install git+https://github.com/chadwhitman/Django-Base-Theme</code></pre>
 	
 <pre><code>pip install django-bootstrap3</code></pre>
 
@@ -50,7 +50,7 @@ TEMPLATE_DIRS = (
 
 To get the latest updates to the base theme, just run the following command: 
 
-<pre><code>pip install git+https://github.com/wharton/django-base-theme --upgrade</code></pre>
+<pre><code>pip install git+https://github.com/chadwhitman/Django-Base-Theme --upgrade</code></pre>
 
 #### To customize your app's stylesheets or javascript
 
