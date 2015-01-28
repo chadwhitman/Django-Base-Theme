@@ -1,23 +1,11 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block content %}
 <h2 class="visuallyhidden">Main Content</h2>
 <div class="container">
   <div class="row">
-    <aside id="sidebar" role="complimentary">
-      <div class="col-md-3">
-        <h2>Sidebar Content</h2>
-        <nav id="sidebar-nav">
-          <ul>
-            <li><a href="#">Item 1</a></li>
-            <li><a class="current" href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-            <li><a href="#">Item 4</a></li>
-            <li><a href="#">Item 5</a></li>
-          </ul>
-        </nav>
-      </div>
-    </aside>
-    <div class="col-md-6">
+	  {% block inner_content %}
+    <div class="col-md-12">
       <h2>Main Content</h2>
       <section id="part-one">
         <header class="visuallyhidden">A Main Section</header>
@@ -62,23 +50,10 @@
         </article>
       </section>
     </div>
-    <!-- end col-md-6 -->
-    <aside id="sidebar" role="complimentary">
-      <div class="col-md-3">
-        <h2>Sidebar Content</h2>
-        <nav id="sidebar-nav">
-          <ul>
-            <li><a href="#">Item 1</a></li>
-            <li><a class="current" href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-            <li><a href="#">Item 4</a></li>
-            <li><a href="#">Item 5</a></li>
-          </ul>
-        </nav>
-      </div>
-    </aside>
+    <!-- end col-md-12-->
+    {% endblock inner_content %}
   </div>
   <!--/ end row -->
 </div>
 <!--/ end container -->
-{% endblock %}
+{% endblock content %}

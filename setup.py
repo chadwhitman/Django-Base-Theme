@@ -3,10 +3,6 @@ from setuptools import setup
 
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-realpath = os.path.dirname(os.path.realpath('__file__'))
-TEMPLATE_DIRS = os.path.join(realpath, "templates")
-dataFiles = [(os.path.join(os.path.dirname(os.path.realpath('__file__')), "templates"), ['base_theme/templates/base.html']),]
-
 setup(
     name='base_theme',
     version='1.0',
@@ -14,9 +10,9 @@ setup(
     package_data={'base_theme': [
         'templates/*.html',
         'templates/your_app/*.html',
-        'templates/layout_options/*.html',
         'static/bootstrap_css/*.css',
         'static/fonts/*.*',
+        'static/fonts/*.min.*',
         'static/fonts/bask/*.*',
         'static/fonts/lato/*.*',
         'static/fonts/lus/*.*',
@@ -38,10 +34,9 @@ setup(
         'static/scss/config.rb',
     ]},
     include_package_data=True,
-    data_files = [('/templates', ['base_theme/templates/base.html']),],
     license='BSD License',
     description="A responsive base theme for Wharton Django applications.",
-    url='https://github.com/chadwhitman/Base-Theme/',
+    url='https://github.com/wharton/django-base-theme/',
     author='Chad Whitman, the Wharton School',
     classifiers=[
         'Environment :: Web Environment',

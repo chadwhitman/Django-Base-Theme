@@ -4,21 +4,30 @@
 
 ##### Components & Standards: 
 - Twitter Bootstrap 3
+- Normalize
 - HTML5 Boilerplate 
 - HTML5 & CSS3
-- SASS/SCSS (compiled via Compass)
+- Responsive
+- SASS/SCSS
 - jQuery
 - Modernizer.js
 - Respond.js
-- Fonts from fontpro.com (Open Font License)
+- Font Awesome
+- Custom fonts served via Fonts.com
+
+##### Notes on this Guide
+
+"Project" refers to the entire application and "app" refers to a submodule of the application.
 
 #### Update your project's settings.py file
 
 ##### Add the following to the bottom of your settings.py file:
 
-<pre><code>STATIC_URL = '/static/'
+<pre><code>STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "assets"),
+)
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
@@ -33,45 +42,98 @@ TEMPLATE_DIRS = (
 
 #### Installation via pip
 
-1.) pip install git+https://github.com/chadwhitman/Base-Theme.git
+<pre><code>pip install git+https://github.com/wharton/django-base-theme</code></pre>
 	
-2.) pip install django-bootstrap3 
+<pre><code>pip install django-bootstrap3</code></pre>
 
-3.) Run 'python manage.py collectstatic' to update your static files in your project directory.
+#### Getting Updates
 
-You may need to add '--upgrade' to the end of the pip install to get the latest files.
+To get the latest updates to the base theme, just run the following command: 
 
-#### Installation via Git Clone
+<pre><code>pip install git+https://github.com/wharton/django-base-theme --upgrade</code></pre>
 
-If you don't want to pip install, you can always just clone the repo into your project and move
-the files where you want them.
+#### To customize your app's stylesheets or javascript
+
+1.) Create a new folder in your project directory called "assets"
+
+2.) Create your custom stylesheets and/or javascript files in the assets folder.
 
 #### To customize your app's templates:
-		
-If you are customizing the base.html for your own app, create a new directory for your app's templates and have your base.html extend off the main base.html template, like this:
 
-<pre><code>templates/
-     base.html #### main base.html
-     your-app1/ #### same name as your app
-           base.html #### Inherits from main base.html
-           list.html
-           detail.html
-     your-app2/ #### same name as your app
-           base.html #### Inherits from main base.html 
+1.) Create a new folder in your project directory called "templates."
+		
+2.) Create a directory within "templates" for your app and call it the name of your app. 
+    So, if your app is "polls," your folder would be called "polls."
+
+3.) Within that app folder, create a template called "base.html." 
+
+##### Below is an example breakdown for custom templates and other static files:
+
+<pre><code>project/
+		manage.py
+project/
+		settings.py
+		urls.py
+your-app/
+		models.py
+		views.py
+assets/
+		 styles.css #### Your custom styles here.
+		 scripts.js #### Your custom js here.
+templates/
+     your-app/ #### same name as your app
+           base.html #### Your base inherits from one of the layout templates.
            list.html
            detail.html
 </code></pre>
+
+4.) You can find an example of an app's base.html file here: https://github.com/wharton/django-base-theme/blob/master/base_theme/templates/your_app/base.html
+
+5.) And that is all you need to get started!
+    Remember extends must always be at the top of your file. 
+
+6.) You can find different layouts for your app here: https://github.com/wharton/django-base-theme/tree/master/base_theme/templates.
            
-There are a few layout options already created in the 'templates/layout_options" directory, each option extends the main 'base.html' template. You can simply copy and paste the code from one of those layouts into your app's 'base.html.' Remember to make sure your app's 'url.py' is pointing to your 'base.html' template.
+#### Utilizing the Django Block System
 
-#### Initial Test View/Url Configuration
+The official Django docs do a good job of explaining how template inheritance works and how to utilize the block system.
 
-This is just an example:
+https://docs.djangoproject.com/en/dev/topics/templates/#template-inheritance
+
+Here is a list of blocks included in the Django Base Theme that you can use to customize your own template as needed. You
+can also find them listed in the base.html template found here: https://github.com/wharton/django-base-theme/tree/master/base_theme/templates.
+
+- {% block site_title %}
+- {% block extra_head_top %} 
+- {% block extra_head_bottom %}
+- {% block header_wrapper %}
+- {% block header %}
+- {% block banner_wrapper %}
+- {% block banner_logo %}
+- {% block banner_title %}
+- {% block main_nav_wrapper %}
+- {% block main_nav %}
+- {% block mobile_sidebar_nav %}
+- {% block breadcrumb_wrapper %}
+- {% block breadcrumb %}
+-	{% block content_wrapper %}
+- {% block content %}
+- {% block inner_content %}
+- {% block left_sidebar %}
+- {% block right_sidebar %}
+- {% block footer_wrapper %}
+- {% block footer %}
+- {% block footer_js %}
+- {% block extra_footer_js %}
+
+#### Initial Test View & Url Configuration
+
+This is just an example to get your started:
 
 <pre><code>from django.views.generic import TemplateView
 
 class BaseView(TemplateView):
-    template_name = "your_app/base.html" 
+    template_name = "your_app/base.html" #### Remember to make sure your app's 'url.py' is pointing to your 'base.html' template.
 </code></pre>
     
 And in your urls.py file:
@@ -83,12 +145,3 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 )
 </code></pre>
-
-#### Updating your project's stylesheets
-You can update the styles via the SASS files (file extension .scss):
-- Directory path --> 'static/scss/scss/example-folder/example-file.scss'
-
-Or if you don't want to use SASS (or just need to add a few custom styles), you could add your custom styles here:
-- Directory path --> 'static/scss/compiled_css/custom.css'
-
-Note: Don't add styles to 'compiled_css/all.css' directly, as they could potentially get overwritten when SASS is compiled. 
