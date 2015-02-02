@@ -63,6 +63,10 @@ To get the latest updates to the base theme, just run the following command:
     (<link href='{% static "styles.css" %}' rel="stylesheet" type="text/css">)
 {% endblock extra_head_bottom %}</pre></code>
 
+This is [an example](http://example.com/ "Title") inline link.
+
+[This link](http://example.net/) has no title attribute.
+
 <pre><code><!-- Placed at the end of the document so the pages load faster -->
 {% block extra_footer_js %}
     <script src="{% static "scripts.js" %}"></script>
