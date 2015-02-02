@@ -60,7 +60,7 @@ To get the latest updates to the base theme, just run the following command:
     your custom styles or javascript, you would add a link to your template like this:
     
 <pre><code>{% block extra_head_bottom %}
-    [This link]<link href='{% static "styles.css" %}' rel="stylesheet" type="text/css">
+    [<link href='{% static "styles.css" %}' rel="stylesheet" type="text/css">]
 {% endblock extra_head_bottom %}</pre></code>
 
 <pre><code><!-- Placed at the end of the document so the pages load faster -->
