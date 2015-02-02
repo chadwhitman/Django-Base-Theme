@@ -59,9 +59,9 @@ To get the latest updates to the base theme, just run the following command:
 2.) Create your custom stylesheets and/or javascript files in the assets folder. To add 
     your custom styles or javascript, you would add a link to your template like this:
     
-{% block extra_head_bottom %}
-    [<link href='{% static "styles.css" %}'>]
-{% endblock extra_head_bottom %}
+#### {% block extra_head_bottom %}
+####    <link href='{% static "styles.css" %}'>
+####{% endblock extra_head_bottom %}
 
 <!-- Placed at the end of the document so the pages load faster -->
 {% block extra_footer_js %}
