@@ -56,7 +56,17 @@ To get the latest updates to the base theme, just run the following command:
 
 1.) Create a new folder in your project directory called "assets"
 
-2.) Create your custom stylesheets and/or javascript files in the assets folder.
+2.) Create your custom stylesheets and/or javascript files in the assets folder. To add 
+    your custom styles or javascript, you would add a link to your template like this:
+    
+<pre><code>{% block extra_head_bottom %}
+    <link href="{% static "styles.css" %}" rel="stylesheet" type="text/css">
+{% endblock extra_head_bottom %}</pre></code>
+
+<pre><code><!-- Placed at the end of the document so the pages load faster -->
+{% block extra_footer_js %}
+    <script src="{% static "scripts.js" %}"></script>
+{% endblock extra_footer_js %}</pre></code>  
 
 #### To customize your app's templates:
 
