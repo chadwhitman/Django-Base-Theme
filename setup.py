@@ -32,7 +32,6 @@ setup(
         'static/scss/scss/layout/header/*.scss',
         'static/*.*',
         'static/scss/config.rb',
-        'gulpfile.js',
     ]},
     include_package_data=True,
     license='BSD License',

@@ -21,10 +21,8 @@
 - List of Contributors
 	
 ### Introduction
-- Version: 1.0
-- This repo contains a responsive Django-based theme for Wharton apps.
-- Includes official Wharton branding styles, logos and layouts.
-- To be customized to your app's needs.
+- A responsive Django-based theme designed for Wharton apps (v1.0).
+- Includes official Wharton branding styles, logos, layouts and fonts.
 
 ### Components & Standards: 
 - Twitter Bootstrap 3
@@ -189,7 +187,7 @@ urlpatterns = patterns('',
 
 ### Using Gulp to automate your front-end workflow 
 
-You can find an example gulpfile.js (copied from this example: http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/) in this repo. If you are going to use Gulp, you will need to manually add it to your project's root directory. For more info on how to use Gulp go here: http://gulpjs.com.
+Included in this repo is an example gulpfile (copied from: http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/). But, if you use Gulp, you will need to add it to your project's root directory. For more info on how to use Gulp go here: http://gulpjs.com.
 
 ### Contributors
 
