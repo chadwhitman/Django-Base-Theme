@@ -1,7 +1,11 @@
+### Django Base Theme (v1.0)
+- Django Base Theme is a responsive front-end boilerplate designed for Wharton Django/Python apps.
+- It contains helpful plugins, components and standards to help you get started.
+- It also includes official Wharton branding styles, logos, layouts and fonts.
+
 ### Table of Contents
-- Introduction
 - Components & Standards
-- Quick note
+- SASS/SCSS Integration
 - Modifying Settings.py
 	- Adding Directories
 	- Adding Installed Apps
@@ -15,18 +19,15 @@
 	- Examples of different template layout options
 - Utilizing the Django Block System
 	- A list of blocks available with base-theme
+- Adding Django Debug Toolbar
 - Example test view & url configuration
 - Example url.py file
 - Using Gulp to automate your front-end workflow
 - List of Contributors
 	
-### Introduction
-- A responsive Django-based theme designed for Wharton apps (v1.0).
-- Includes official Wharton branding styles, logos, layouts and fonts.
-
 ### Components & Standards: 
 - Twitter Bootstrap 3
-- Normalize
+- Normalize Reset
 - HTML5 Boilerplate 
 - HTML5 & CSS3
 - Responsive
@@ -36,11 +37,26 @@
 - Respond.js
 - Font Awesome
 - Custom fonts served via Fonts.com
-- Gulp
+- Gulp Workflow Automation
 
-### Quick note on this Guide
+### SASS/SCSS Integration
 
-"Project" refers to the entire application and "app" refers to a submodule of the application.
+This project uses the CSS extension language SASS (it's very similar to LESS for those familiar with LESS). SASS adds power and organization to your stylesheets.
+
+SCSS/SASS outputs to CSS via compilers like Compass or Gulp (we use Gulp, see below to learn more about Gulp). To learn more about SASS go here: 
+
+<pre><code>http://sass-lang.com</code></pre>
+
+Some helpful SASS Mixins included in this theme are:
+
+- REM to px fallback
+- SVG Background-images with PNG and retina fallBack
+- Media Queries utilizing the @content feature
+- Cross Browser Opacity
+
+You can see a full (and growing) list of mixins, variables and other SASS helpers here:
+
+<pre><code>https://github.com/wharton/django-base-theme/tree/master/base_theme/static/scss/scss/helpers</code></pre>
 
 ### Modifying Settings.py
 
@@ -49,7 +65,7 @@
 <pre><code>STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "assets"),
+    os.path.join(BASE_DIR, "assets"), #### You can also call this static_dev or whatever name you want
 )
 
 TEMPLATE_DIRS = (
@@ -65,24 +81,29 @@ TEMPLATE_DIRS = (
 
 ### PIP installation
 
-<pre><code>pip install git+https://github.com/chadwhitman/Django-Base-Theme</code></pre>
+<pre><code>pip install git+https://github.com/wharton/Django-Base-Theme</code></pre>
 	
 <pre><code>pip install django-bootstrap3</code></pre>
 
-### Updating Base-Theme
+### Getting the latest Base-Theme Updates
 
 To get the latest updates to the base theme, just run the following command: 
 
-<pre><code>pip install git+https://github.com/chadwhitman/Django-Base-Theme --upgrade</code></pre>
+<pre><code>pip install git+https://github.com/wharton/Django-Base-Theme --upgrade</code></pre>
+
+Or you might have to first do a <pre><code> pip uninstall base-theme</code></pre> and then 
+
+<pre><code>pip install git+https://github.com/wharton/Django-Base-Theme</code></pre>
 
 ### Add custom stylesheets or javascript
 
-1.) Create a new folder in your project directory called "assets"
+1.) Create a new folder in your project directory called "assets" #### You can also call this static_dev or whatever name you want
 
 2.) Create your custom stylesheets and/or javascript files in the assets folder.
 
-3.) Include a link to your custom styles/js in your template, like this: 
-    https://github.com/wharton/django-base-theme/blob/master/base_theme/templates/your_app/base.html
+3.) Include a link to your custom styles/js, like the link example in this template:
+    
+<pre><code>https://github.com/wharton/django-base-theme/blob/master/base_theme/templates/your_app/base.html</code></pre>
 
 ### Add custom templates:
 
@@ -118,7 +139,7 @@ templates/
 4.) Note: The layouts (left, right, both, full) extend the original base.html.
 		The original base.html is in your site-packages directory (after you pip install it).
 
-#### Here is an example of what would go into your app's base.html file:
+#### In this template is an example of what would go into your app's base.html:
     https://github.com/wharton/django-base-theme/blob/master/base_theme/templates/your_app/base.html
 
 #### If you wanted to extend your app's base.html into, say, your app's list.html template, you would just need  to make sure your extends path is pointing to your app's base template, like this:
@@ -126,7 +147,7 @@ templates/
 <pre><code>{% extends "your-app/base.html" %}</code></pre>
     
 
-#### You can find different layouts for your app here: 
+#### You can find different layouts for your app in this template: 
 <pre><code>https://github.com/wharton/django-base-theme/tree/master/base_theme/templates.</code></pre>
            
 ### Utilizing the Django Block System
@@ -160,9 +181,15 @@ The official Django docs do a good job of explaining how template inheritance wo
 - {% block right_sidebar %}
 - {% block footer_wrapper %}
 - {% block footer %}
+- {% block footer_app_link %}
 - {% block footer_js %}
 - {% block extra_footer_js %}
 </code></pre>
+
+### Adding the Django Debug Toolbar
+
+These Django docs do a good job of explaining how to integrate the toolbar:
+<pre><code>http://django-debug-toolbar.readthedocs.org/en/latest/installation.html</code></pre>
 
 ### Initial Test View & Url Configuration
 
@@ -187,7 +214,7 @@ urlpatterns = patterns('',
 
 ### Using Gulp to automate your front-end workflow 
 
-Included in this repo is an example gulpfile (copied from: http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/). But, if you use Gulp, you will need to add it to your project's root directory. For more info on how to use Gulp go here: http://gulpjs.com.
+Included in this repo is an example gulpfile (copied from: http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/). But, if you use Gulp, you will need to manually add it to your project's root directory. For more info on how to use Gulp go here: http://gulpjs.com.
 
 ### Contributors
 
