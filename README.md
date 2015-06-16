@@ -42,9 +42,9 @@
 
 ### SASS/SCSS Integration
 
-This project uses the CSS extension language SASS (it's very similar to <a href="http://lesscss.org">LESS</a> for those familiar with LESS). SASS adds power and organization to your stylesheets.
+This project uses the CSS extension language <a href="http://sass-lang.com">SASS</a> (it's very similar to LESS for those familiar with LESS). SASS adds power and organization to your stylesheets.
 
-SCSS/SASS outputs to CSS via compilers like <a href="http://compass-style.org">Compass</a>, <a href="http://libsass.org">LibSass</a>, <a href="https://incident57.com/codekit">CodeKit</a> or <a href="http://gulpjs.com">Gulp</a> (we use Gulp, see below to learn more about Gulp). <a href="http://sass-lang.com">Learn more about SASS/SCSS</a>. 
+SCSS/SASS outputs to CSS via compilers like <a href="http://compass-style.org">Compass</a>, <a href="http://libsass.org">LibSass</a>, <a href="https://incident57.com/codekit">CodeKit</a> or <a href="http://gulpjs.com">Gulp</a>.<a href="http://sass-lang.com"> Learn more about SASS/SCSS</a>. 
 
 Some helpful SASS Mixins included in this theme are:
 
@@ -137,9 +137,9 @@ templates/
            
 ### Utilizing the Django Block System
 
-The <a href="https://docs.djangoproject.com/en/dev/topics/templates/#template-inheritance">official Django docs</a> do a good job of explaining how template inheritance works and how to utilize the block system.
+The <a href="https://docs.djangoproject.com/en/1.8/topics/templates/#template-inheritance">official Django docs</a> do a good job of explaining how template inheritance works and how to utilize the block system.
 
-#### The following is a list of blocks included in the Django Base Theme that you can use to customize your own template as needed. You can also find them listed in the original base.html template <a href="https://github.com/wharton/django-base-theme/blob/master/base_theme/templates/base.html">here</a>. 
+The following is a list of blocks included in the Django Base Theme that you can use to customize your own template as needed. You can also find them listed in the original base.html template <a href="https://github.com/wharton/django-base-theme/blob/master/base_theme/templates/base.html">here</a>. 
 
 <pre><code>- {% block site_title %} 
 - {% block extra_head_top %}
@@ -197,7 +197,7 @@ urlpatterns = patterns('',
 
 ### Using Gulp to automate your front-end workflow 
 
-Included in this repo is an example gulpfile (copied from: <a href='http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/'>RevSys' Front-end Guide</a>). But, if you use Gulp, you will need to manually add it to your project's root directory. For more info on how to use Gulp go here: <a href="http://gulpjs.com">http://gulpjs.com</a>.
+Included in this repo is an <a href="https://github.com/wharton/django-base-theme/blob/master/base_theme/static/gulpfile.js">example gulpfile</a> (based on: <a href='http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/'>RevSys' Front-end Guide</a>). If you use Gulp, you will need to manually add it to your root directory and customize it to your project's needs. For more info on how to use Gulp go here: <a href="http://gulpjs.com">http://gulpjs.com</a>.
 
 ### Contributors
 

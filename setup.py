@@ -12,6 +12,7 @@ setup(
         'templates/your_app/*.html',
         'static/bootstrap_css/*.css',
         'static/fonts/*.*',
+        'static/fonts/fa/*.*',
         'static/fonts/*.min.*',
         'static/fonts/bask/*.*',
         'static/fonts/lato/*.*',
@@ -35,7 +36,7 @@ setup(
     ]},
     include_package_data=True,
     license='BSD License',
-    description="A responsive base theme for Wharton Django applications.",
+    description="A responsive front-end boilerplate designed for Wharton Django/Python apps.",
     url='https://github.com/wharton/django-base-theme/',
     author='Chad Whitman, the Wharton School',
     classifiers=[
