@@ -1,19 +1,4 @@
-/**
- * TABLE OF CONTENTS
- *
- * TOP NAV
- *    - left, right, container
- *    - dropdown menu
- *    - top red bar
- *    - right
- *    - search
- */
- 
-/*------------------------------------*\
-    #LEFT, RIGHT, CONTAINER
-\*------------------------------------*/
-
-#header__nav {
+#top-nav {
 	.navbar-left {
 		@include small {
 			width: 100%;
@@ -57,12 +42,7 @@
 		}
 	}
 }
-
-/*------------------------------------*\
-    #DROPDOWN MENU
-\*------------------------------------*/
-
-#header__nav {
+#top-nav {
 	.dropdown-menu {
 		margin-top: -2px;
 		background-color: $gray;
@@ -86,11 +66,8 @@
 			color: #b4b4b4;
 	}
 }
-/*------------------------------------*\
-    #TOP-RED-BAR
-\*------------------------------------*/
 
-#header__topleft__bar--red {
+#top-red-bar {
 	background-color: $red;
 	position: relative;
 	width: 375px;
@@ -103,20 +80,12 @@
 	}
 }
 
-/*------------------------------------*\
-    #RIGHT
-\*------------------------------------*/
-
-#header__nav .nav.navbar-nav.navbar-right {
+#top-nav .nav.navbar-nav.navbar-right {
 	position: relative;
 	padding-top: 0px;
 	margin-top: 0px;
 	margin-right: -1px;
 }
-
-/*------------------------------------*\
-    #SEARCH
-\*------------------------------------*/
 
 li#glyph-search {
 	height: 21px !important;

@@ -1,17 +1,7 @@
-/**
- * TABLE OF CONTENTS
- *
- * MAIN NAV
- *    - active a
- *    - container
- *    - li a
- *    - search
- *    - mobile search
- */
- 
-/*------------------------------------*\
-    #ACTIVE A
-\*------------------------------------*/
+/* ==========================================================================
+   Main Nav Styles
+   ========================================================================== */
+
 .main-nav {
 	font-family: $helv;
 	&.navbar-inverse .navbar-nav > .active > a {
@@ -24,9 +14,6 @@
 	}
 }
 
-/*------------------------------------*\
-    #CONTAINER
-\*------------------------------------*/
 .main-nav {
 	min-height: 0px;
 	margin-bottom: 0px;
@@ -45,9 +32,6 @@
 	}
 }
 
-/*------------------------------------*\
-    #LI A
-\*------------------------------------*/
 .main-nav {
 		&.navbar-inverse {
 		background: none;
@@ -81,11 +65,7 @@
 	}
 }
 
-/*------------------------------------*\
-    #SEARCH
-\*------------------------------------*/
-
-#header__nav__search {
+#search {
 	position: absolute;
 	top: 21px;
 	right: 0px;
@@ -108,7 +88,11 @@
 	}
 }
 
-#main_nav__search {
+.main-nav {
+	#search-option {
+			display: none;
+	}
+	#search {
 		background-color: #2b2b2b;
 		position: relative;
 		top: 0px;
@@ -116,25 +100,17 @@
 		.input-group {
 			width: 100%;
 		}
+	}
 }
 
-.search__glyph__icon {
-  &.header {
-	  background-color: #2b2b2b;
-  }
-  &.main_nav {
-	  display: none;
-  }
-  .glyphicon-search {
-	  color: #eee;
-  }
+#glyph-search {
+	background-color: #2b2b2b;
+	.glyphicon-search {
+		color: #eee;
+	}
 }
 
-/*------------------------------------*\
-    #MOBILE SEARCH
-\*------------------------------------*/
-
-ul.main_nav__sidebar__context__small {
+ul.mobile-sm {
 	display: none;
 	padding-left: 0px;
 	background-color: #e8e8e8;

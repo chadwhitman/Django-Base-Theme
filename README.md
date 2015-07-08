@@ -1,11 +1,10 @@
 ### Django Base Theme
-- A responsive front-end boilerplate designed for <a href="http://wharton.upenn.edu">Wharton</a> <a href="https://www.djangoproject.com">Django</a>/<a href="https://www.python.org">Python</a> apps.
-- Contains helpful plugins, components and standards to help you get started.
-- Includes <a href="http://standards.wharton.upenn.edu">official Wharton branding styles, logos, layouts and fonts</a>.
+- Django Base Theme is a responsive front-end boilerplate designed for <a href="http://wharton.upenn.edu">Wharton</a> <a href="https://www.djangoproject.com">Django</a>/<a href="https://www.python.org">Python</a> apps.
+- It contains helpful plugins, components and standards to help you get started.
+- It also includes <a href="http://standards.wharton.upenn.edu">official Wharton branding styles, logos, layouts and fonts</a>.
 
 ### Table of Contents
 - Components & Standards
-- CSS Guidelines
 - SASS/SCSS Integration
 - Modifying Settings.py
 	- Adding Directories
@@ -40,10 +39,6 @@
 - <a href="http://fortawesome.github.io/Font-Awesome">Font Awesome</a>
 - <a href="http://www.fonts.com">Custom fonts served via Fonts.com</a>
 - <a href="http://gulpjs.com">Gulp Workflow Automation</a>
-
-### CSS Guidelines
-- <a href="https://smacss.com">SMACSS Architecture</a>
-- <a href="http://cssguidelin.es">cssguidelin.es</a>
 
 ### SASS/SCSS Integration
 

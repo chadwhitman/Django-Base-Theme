@@ -48,12 +48,12 @@
 <header id="header" role="heading">
 {% block header %}
 <h2 class="visuallyhidden">Header</h2>
-<div id="header__nav" role="navigation">
+<div id="top-nav" role="navigation">
  <h2 class="visuallyhidden">Top Navigation</h2>
  <div class="container">
    <div class="row">
      <ul class="nav navbar-nav navbar-left">
-       <div id="header__topleft__bar--red">&nbsp;</div>
+       <div id="top-red-bar">&nbsp;</div>
      </ul>
      <ul class="nav navbar-nav navbar-right">
      <li class="dropdown">
@@ -67,7 +67,7 @@
          <li class="divider"></li>
          <li><a href="http://www.wharton.upenn.edu/academics/academics.cfm/">Prospective Students</a></li>
          <li><a href="http://www.wharton.upenn.edu/alumni/">Alumni</a></li>
-         <li><a href="http://www.wharton.upenn.edu/recruiters_corporations/index.cfm">Recruiters and Corporations</a></li>
+         <li><a href="http://recruiters-corp.wharton.upenn.edu/">Recruiters and Corporations</a></li>
          <li><a href="https://inside.wharton.upenn.edu/">Faculty & Staff</a></li>
          <li class="divider"></li>
          <li><a href="http://knowledge.wharton.upenn.edu/">Knowledge@Wharton</a></li>
@@ -85,9 +85,9 @@
      </li>
      <li><a href="http://www.wharton.upenn.edu/">Wharton Home</a></li>
      <li><a href="http://www.upenn.edu/">Penn</a></li>
-     <li class="search__glyph__icon header"><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+     <li id="glyph-search"><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
      <form action="https://www.wharton.upenn.edu/search/" method="get" name="search">
-		  <div id="header__nav__search">
+		  <div id="search">
 		    <div class="input-group">
 		      <input type="text" value="Search Wharton" class="form-control" name="q">
 		      <span class="input-group-btn">
@@ -105,9 +105,9 @@
  <div class="container">
    <div class="row">
 	   {% block header_logo %}
-     	<a href="http://www.wharton.upenn.edu/"><img class="banner__logo" src="{% static "base_theme/img/logo/UPenn-Wharton-Logo.png" %}" width="218" height="56" alt="Wharton Logo"></a>
+     	<a href="http://www.wharton.upenn.edu/"><img id="logo" src="{% static "base_theme/img/logo/UPenn-Wharton-Logo.png" %}" width="218" height="56" alt="Wharton Logo"></a>
      {% endblock header_logo %}
-     <a href={% url 'home' %}>{% block banner_title %}<div class="banner__title">Wharton Computing</div>{% endblock banner_title %}</a>
+     <a href={% url 'home' %}>{% block banner_title %}<div id="title">Wharton Computing</div>{% endblock banner_title %}</a>
    </div><!--/ end row -->
  </div><!--/ end container -->
 </div><!--/ end banner -->
@@ -126,6 +126,7 @@
        <span class="icon-bar"></span>
        </button>
        <a class="navbar-brand visuallyhidden" href="#">Wharton</a>
+       <div id="top-left-container"></div>
      </div>
      <div class="collapse navbar-collapse">
        <ul class="nav navbar-nav navbar-right">
@@ -136,7 +137,7 @@
          <li class="active"><a href="#">Active Item 4</a></li>
             <!--/ This will need to be adjusted based on the layout you end up choosing -->
          		{% block mobile_sidebar_nav %}
-		         <ul class="main_nav__sidebar__context__small">
+		         <ul class="mobile-sm">
 		           <li><a href="#">Sidebar Menu Starts Here</a></li>
 		           <li class="active"><a href="#">Active Item 1</a></li>
 		           <li><a href="#">Item 3</a></li>
@@ -149,9 +150,9 @@
           {% endblock main_nav %}
        </ul>
      </div><!--/ end nav-collapse -->
-     <div class="search__glyph__icon main_nav"><a href="#"><span class="glyphicon glyphicon-search"></span></a></div>
+     <div id="search-option"><a href="#"><span class="glyphicon glyphicon-search"></span></a></div>
      <form action="https://www.wharton.upenn.edu/search/" method="get" name="search">
-		  <div id="main_nav__search">
+		  <div id="search">
 		    <div class="input-group">
 		      <input type="text" value="Search Wharton" class="form-control" name="q">
 		      <span class="input-group-btn">
@@ -298,7 +299,7 @@
 			      <li><a href="http://alumni.wharton.upenn.edu">Alumni Home</a></li>
 		        <li><a href="http://www.wharton.upenn.edu/locations">Locations</a></li>
 		        <li><a href="http://www.wharton.upenn.edu/contact-us-directories">Contact Us</a></li>
-		        <li><a href="http://www.wharton.upenn.edu/recruiters_corporations/index.cfm">Recruiters and Corporations</a></li>
+		        <li><a href="http://recruiters-corp.wharton.upenn.edu/">Recruiters and Corporations</a></li>
 		      </ul>
 		  </div>
 		  <div class="col-md-2 wharton">
@@ -319,16 +320,16 @@
 		      </ul>
 		  </div>
 	  	<div class="col-md-2 social">
-				<ul class="footer__social__icons"><li class="facebook-icon"><a href="https://www.facebook.com/WhartonSchool"><img src="{% static "base_theme/img/social/facebook-icon.png" %}" width="29" height="29" alt="Facebook"></a></li><li class="twitter-icon"><a href="https://www.twitter.com/wharton"><img src="{% static "base_theme/img/social/twitter-icon.png" %}" width="29" height="29" alt="Twitter"></a></li><li class="googleplus-icon"><a href="https://plus.google.com/+wharton/posts"><img src="{% static "base_theme/img/social/googleplus-icon.png" %}" width="29" height="29" alt="Google+"></a></li><li class="youtube-icon"><a href="https://www.youtube.com/user/thewhartonschool"><img src="{% static "base_theme/img/social/youtube-icon.png" %}" width="29" height="29" alt="YouTube"></a></li><li class="flickr-icon"><a href="https://www.flickr.com/photos/thewhartonschool/"><img src="{% static "base_theme/img/social/flickr-icon.png" %}" width="29" height="29" alt="Flickr"></a></li></ul>
+				<ul class="social-icons"><li class="facebook-icon"><a href="https://www.facebook.com/WhartonSchool"><img src="{% static "base_theme/img/social/facebook-icon.png" %}" width="29" height="29" alt="Facebook"></a></li><li class="twitter-icon"><a href="https://www.twitter.com/wharton"><img src="{% static "base_theme/img/social/twitter-icon.png" %}" width="29" height="29" alt="Twitter"></a></li><li class="googleplus-icon"><a href="https://plus.google.com/+wharton/posts"><img src="{% static "base_theme/img/social/googleplus-icon.png" %}" width="29" height="29" alt="Google+"></a></li><li class="youtube-icon"><a href="https://www.youtube.com/user/thewhartonschool"><img src="{% static "base_theme/img/social/youtube-icon.png" %}" width="29" height="29" alt="YouTube"></a></li><li class="flickr-icon"><a href="https://www.flickr.com/photos/thewhartonschool/"><img src="{% static "base_theme/img/social/flickr-icon.png" %}" width="29" height="29" alt="Flickr"></a></li></ul>
 				<!--/ end .social-icons -->	
-				<div id="footer__knowledge__img">
+				<div id="knowledge">
 					<a href="http://knowledge.wharton.upenn.edu/">
 						<img src="{% static "base_theme/img/footer/knowledge-for.png" %}"/>
 					</a>
 				</div>
 			</div>
 			</div><!--/ end row -->
-	 <div class="col-md-2 footer__wharton__links mobile">
+	 <div class="col-md-2 wharton mobile">
 	   <ul>
 	   	<li><a href="http://www.wharton.upenn.edu">Home</a></li>
 			<li><a href="http://news.wharton.upenn.edu">News</a></li>
@@ -336,9 +337,9 @@
 			<li><a href="http://www.wharton.upenn.edu/locations">Locations</a></li>
 	   </ul>
 	 </div>
-	 <div class="row footer__copyright__text">
+	 <div class="row copyright">
 	   <a href="http://www.upenn.edu"><img src="{% static "base_theme/img/footer/Penn-footer-logo.png" alt="UPenn Logo" %}"/></a>
-	   <p>&copy; {% now "Y" %} <a href="http://www.wharton.upenn.edu/">The Wharton School,</a> <a href="http://www.upenn.edu">The University of Pennsylvania</a>{% block footer_app_link %}<span class="footer__home__link">|<a href={% url 'home' %}>Your App Name Here</a></span>{% endblock footer_app_link %}</p>
+	   <p>&copy; {% now "Y" %} <a href="http://www.wharton.upenn.edu/">The Wharton School,</a> <a href="http://www.upenn.edu">The University of Pennsylvania</a>{% block footer_app_link %}<span class="mba">|<a href={% url 'home' %}>Your App Name Here</a></span>{% endblock footer_app_link %}</p>
 	 </div>
 	</div><!--/ end container -->
 	{% endblock footer %}

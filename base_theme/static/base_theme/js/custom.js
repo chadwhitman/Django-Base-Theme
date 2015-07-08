@@ -1,17 +1,16 @@
 // Place any custom jQuery here //
 
 (function () {
-	$('#header__nav__search').hide();
-		$('.search__glyph__icon.header').click(function() {
-			$('#header__nav__search').slideToggle("fast", function() {			
+	$('#search').hide();
+		$('#glyph-search').click(function() {
+			$('#search').slideToggle("fast", function() {			
 		});
   });
   
-  $('#main_nav__search').hide();
-		$('.search__glyph__icon.main_nav').click(function() {
-			$('#main_nav__search').slideToggle("fast", function() {			
+  $('.main-nav #search').hide();
+		$('.main-nav #search-option').click(function() {
+			$('.main-nav #search').slideToggle("fast", function() {			
 		});
   });
   
 }());
-

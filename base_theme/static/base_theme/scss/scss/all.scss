@@ -1,46 +1,25 @@
-/*****
- * TABLE OF CONTENTS
- *
- * ALL IMPORTS
- *    - Bootstrap includes Normalize.css
- *    - reset
- *    - helpers
- *    - defaults
- *    - components/modules
- *    - layout
- *****/
+/* Reset */
+/* Bootstrap includes Normalize.css */
 
-/*------------------------------------*\
-    #HELPERS
-\*------------------------------------*/
+/* Helpers */
+@import 'helpers/font_families';
+@import 'helpers/font_colors';
+@import 'helpers/general_mixins';
+@import 'helpers/svg';
 
-@import 'helpers/fonts/font_families';
-@import 'helpers/fonts/font_colors';
-@import 'helpers/functions/general_mixins';
-@import 'helpers/img/svg';
-
-/*------------------------------------*\
-    #DEFAULTS
-\*------------------------------------*/
-
+/* Base */
 @import 'base/defaults';
 
-/*------------------------------------*\
-    #COMPONENTS
-\*------------------------------------*/
-
+/* Components */
 /* @import 'components/sticky_footer'; */
 @import 'components/print';
 @import 'components/admin';
+@import 'components/sidebar';
+@import 'components/breadcrumb';
 
-/*------------------------------------*\
-    #LAYOUT
-\*------------------------------------*/
-
-@import 'layout/sidebar/sidebar';
-@import 'layout/breadcrumbs/breadcrumb';
-@import 'layout/banner/banner';
+/* Layout */
+@import 'layout/header/banner';
 @import 'layout/header/top_nav';
 @import 'layout/header/main_nav';
-@import 'layout/footer/footer';
-@import 'general_breakpoints/media_queries';
+@import 'layout/footer';
+@import 'layout/media_queries';
