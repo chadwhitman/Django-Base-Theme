@@ -1,0 +1,33 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * BANNER
+ *    - container
+ *    - logo
+ *    - title 
+ *
+ *****/
+
+#banner {
+	.container {
+		@include linear-gradient(#0d2c68,#2e55a4);
+		padding-bottom: 17px;
+	}
+	.banner__logo {
+		margin-top: 17px;
+		float: left;
+	}
+	.banner__title {
+		float: left;
+		padding-left: 35px;
+		padding-top: 25px;
+		color: #fff;
+		font-family: $pal;
+		@include smoothing;
+		text-transform: uppercase;
+		@include font-size(24px);
+		@include small {
+			@include font-size(13px);
+		}
+	}
+} 

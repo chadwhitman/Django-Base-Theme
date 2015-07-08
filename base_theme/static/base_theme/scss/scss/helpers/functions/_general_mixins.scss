@@ -1,0 +1,171 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * MEDIA QUERIES
+ *    - x-small
+ *    - small
+ *    - medium 
+ *    - large
+ *    - x-large
+ *
+ * REM to PIXEL 
+ *
+ * CROSS BROWSER OPACITY
+ *
+ * BORDER RADIUS
+ *
+ * TRANSITIONS
+ * 
+ * BORDER-BOX
+ * 
+ * FONT SMOOTHING
+ *
+ * BOX SHADOW
+ *
+ * GRADIENT
+ *
+ * BOOTSTRAP GLYPHS
+ *
+ *****/
+
+/*------------------------------------*\
+    #MEDIA QUERIES
+\*------------------------------------*/
+@mixin x-small {
+  @media only screen and (max-width:  350px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media only screen and (max-width:  767px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin x-large {
+  @media only screen and (min-width: 1470px) {
+    @content;
+  }
+}
+
+/*------------------------------------*\
+    #REM to PIXEL FALLBACK
+\*------------------------------------*/
+   
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/*------------------------------------*\
+    #CROSS-BROWSER OPACITY
+\*------------------------------------*/
+   
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/*------------------------------------*\
+    #BORDER-RADIUS
+\*------------------------------------*/
+
+@mixin border-radius($radius) {
+	 -webkit-border-top: $radius;
+	-webkit-border-top: $radius;
+	-moz-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+/*------------------------------------*\
+    #TRANSITIONS
+\*------------------------------------*/
+
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/*------------------------------------*\
+    #BORDER-BOX
+\*------------------------------------*/
+@mixin border-box {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+/*------------------------------------*\
+    #FONT SMOOTHING
+\*------------------------------------*/
+
+@mixin smoothing {
+	-moz-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/*------------------------------------*\
+    #BOX SHADOW
+\*------------------------------------*/
+   
+@mixin box-shadow($horiz, $vert, $blur, $spread, $color){
+  -webkit-box-shadow: $horiz $vert $blur $spread $color;
+  -moz-box-shadow: $horiz $vert $blur $spread $color;
+  box-shadow: $horiz $vert $blur $spread $color;
+}
+
+/*------------------------------------*\
+    #GRADIENT
+\*------------------------------------*/
+@mixin linear-gradient($fromColor, $toColor) {
+	background: $toColor; 
+	background: -o-linear-gradient(top, $fromColor, $toColor);
+	background: -ms-linear-gradient(top, $fromColor, $toColor);
+	background: -moz-linear-gradient(top, $fromColor, $toColor);
+	background: -webkit-linear-gradient(top, $fromColor, $toColor);
+	background: linear-gradient(top, $fromColor, $toColor);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+/*------------------------------------*\
+    #BOOTSTRAP GLYPHS
+\*------------------------------------*/
+
+@mixin glyph($content) {
+	content: $content;
+	position: relative;
+	top: -2px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include border-box;
+}

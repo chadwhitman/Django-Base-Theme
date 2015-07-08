@@ -1,0 +1,406 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * GLOBAL SETTINGS
+ *   - body, html
+ *   - lists
+ *   - headers
+ *   - paragraphs
+ *   - links
+ *   - text, strong
+ *   - blockquote
+ *   - textshadow
+ *   - horizontal ruler
+ *   - images, videos, audio, and canvas
+ *   - fieldset
+ *   - textarea
+ *   - helper classes
+ *   - clearfix
+ * BOOTSTRAP OVERRIDES
+ *   - breakpoint
+ *   - padding
+ *   - row styles
+ *
+ *****/
+ 
+/*------------------------------------*\
+    #BODY, HTML
+\*------------------------------------*/
+   
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+body {
+	background: #efefef;
+	background: url('../../../base_theme/img/bg/bg-body.jpg') center -1px repeat-y;
+}
+	
+body, 
+html {
+  font-family: $roma;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+
+li {
+	list-style-type: none;
+	font-family: $roma;
+	word-wrap: break-word;
+	@include smoothing;
+	@include font-size(18px);
+	color: $gray;
+}
+
+ol {
+	font-family: $roma;
+	word-wrap: break-word;
+	@include smoothing;
+	@include font-size(18px);
+	&.bullet-list {
+		margin-top: 10px;
+    margin-bottom: 10px;
+	  li {
+		    list-style-type: disc;
+	  }
+  }
+	&.numbered-list {
+		li {
+			list-style-type: decimal;
+		}
+	}
+}
+
+ul {
+	&.bullet-list {
+		margin-top: 10px;
+    margin-bottom: 10px;
+    li {
+	    list-style-type: disc; 
+    }
+	}
+	&.numbered-list {
+	  li {
+		  list-style-type: decimal;	
+		}
+  }
+}
+	
+/*------------------------------------*\
+    #HEADERS
+\*------------------------------------*/
+   
+#{headings()} {
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  font-weight: normal; 
+  line-height: 1.1;
+	 @include smoothing;
+}
+
+h1 {
+  font-family: $pal;
+	font-size: 2.5em;
+	line-height: 1;
+	color: #1a1a1a;
+}
+
+h2 {
+	font-family: $helvMedi;
+	font-size: 1.625em;
+	color: #333333;
+}
+
+h3 {
+	font-family: $helvLigh;
+	font-size: 1.7em;
+	color: #0e76bc;
+}
+
+h4 {
+	font-family: $helvlt;
+	font-size: 1.75em;
+	font-weight: normal;
+	color: #4d4d4d;
+	letter-spacing: 0.05em;
+}
+
+h5 {
+	font-family: $helvMedi;
+	font-size: 1.313em;
+	color: #262626;
+}
+
+h6 {
+	font-family: $helvBold;
+	font-size: 1.125em;
+	color: #54afdb;
+	text-transform: uppercase;
+}
+
+/*------------------------------------*\
+    #PARAGRAPHS
+\*------------------------------------*/
+   
+p {
+  font-family: $roma;
+  @include smoothing;
+  @include font-size(18px);
+  line-height: 1.5em;
+  margin: 0 0 1.5em 0;
+  color: #4d4d4d;
+  word-wrap: break-word;
+}
+
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+a {
+	font-family: $roma;
+	color: $red;
+	&:hover, &:focus {
+		text-decoration: none;
+		color: #df524e;
+	}
+}
+
+li a {
+  font-family: $roma;
+	word-wrap: break-word;
+	@include smoothing;
+	@include font-size(18px);
+	color: $gray;
+}
+
+#{headings()} a {
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  font-weight: normal; 
+  line-height: 1.1;
+}
+
+/*------------------------------------*\
+    #TEXT STRONG
+\*------------------------------------*/
+
+strong, b {
+	color: #1b1b1b;
+	font-family: $roma;
+	@include smoothing;
+}
+
+/*------------------------------------*\
+    #BLOCKQUOTE
+\*------------------------------------*/
+   
+blockquote {
+	font-family: $roma;
+	background-color: #eee;
+	@include border-radius(4px);
+	padding: 25px;
+	color: $gray;
+	font-style: italic;
+	@include smoothing;
+}
+
+/*------------------------------------*\
+    #TEXT-SHADOW
+\*------------------------------------*/
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+    #HORIZONTAL RULE BAR
+\*------------------------------------*/
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*------------------------------------*\
+    #AUDIO, CANVAS, IMG, VIDEO
+\*------------------------------------*/
+
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+
+/*------------------------------------*\
+    #FIELDSET
+\*------------------------------------*/
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*------------------------------------*\
+    #TEXTAREA
+\*------------------------------------*/
+
+textarea {
+  resize: vertical;
+}
+
+/*------------------------------------*\
+    #BROWSE HAPPY PROMPT
+\*------------------------------------*/
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/*------------------------------------*\
+    #HELPER CLASSES
+\*------------------------------------*/
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  &.focusable:active,
+  &.focusable:focus {
+		clip: auto;
+	  height: auto;
+	  margin: 0;
+	  overflow: visible;
+	  position: static;
+	  width: auto;
+  }
+}
+
+/*------------------------------------*\
+    #CLEARFIX
+\*------------------------------------*/
+ 
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/*------------------------------------*\
+    #BREAKPOINTS (override bootstrap)
+\*------------------------------------*/
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+} 
+@media (min-width: 1470px) {
+  .container {
+    width: 1470px;
+  }
+}
+
+/* For: http://getbootstrap.com/getting-started/#support-ie10-width */
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+
+/*------------------------------------*\
+    #PADDING FOR VARIOUS ELEMENTS
+\*------------------------------------*/
+
+#header, 
+	#banner, 
+	#breadcrumb,
+	.main-nav,
+	#footer,
+	section,
+	#header__nav--top,
+	#view-more {
+		.row {
+			padding: 0px 40px;
+	}
+}
+
+@include x-large {
+	#header, 
+	#banner,
+	#header__nav--top, 
+	#breadcrumb,
+	.main-nav,
+	#footer,
+	section,
+	#view-more {
+		.row {
+			padding: 0px 115px;
+		}
+	}
+}
+
+/*------------------------------------*\
+    #CONTAINERS
+\*------------------------------------*/
+   
+main#content .container {
+  padding: 0px 40px;
+	@include x-large {
+	  padding: 0 115px;
+	}
+	@include small {
+    padding: 0px 10px;
+	}
+} 
+
+footer {
+  padding-top: 100px;
+}

@@ -1,7 +1,6 @@
-### Django Base Theme
-- A responsive front-end boilerplate designed for <a href="http://wharton.upenn.edu">Wharton</a> <a href="https://www.djangoproject.com">Django</a>/<a href="https://www.python.org">Python</a> apps.
-- Contains helpful plugins, components and standards to help you get started.
-- Includes <a href="http://standards.wharton.upenn.edu">official Wharton branding styles, logos, layouts and fonts</a>.
+### Django Base Theme - CSS Guideline
+- The following is based on the CSS Guidelines by Howard frank. 
+- Here a few key points to follow when writing your css
 
 ### Table of Contents
 - Components & Standards
