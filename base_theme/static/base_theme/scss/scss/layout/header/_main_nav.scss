@@ -65,7 +65,7 @@
 	}
 }
 
-#search {
+.header__search__input-form {
 	position: absolute;
 	top: 21px;
 	right: 0px;
@@ -89,10 +89,10 @@
 }
 
 .main-nav {
-	#search-option {
+	#main-nav__search__glyph {
 			display: none;
 	}
-	#search {
+	.header__search__input-form {
 		background-color: #2b2b2b;
 		position: relative;
 		top: 0px;
@@ -103,7 +103,7 @@
 	}
 }
 
-#glyph-search {
+#top-nav__search__glyph {
 	background-color: #2b2b2b;
 	.glyphicon-search {
 		color: #eee;
