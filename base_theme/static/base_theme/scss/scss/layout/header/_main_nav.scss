@@ -85,7 +85,7 @@
     #SEARCH
 \*------------------------------------*/
 
-.header__nav__search {
+#header__nav__search {
 	position: absolute;
 	top: 21px;
 	right: 0px;
@@ -108,8 +108,7 @@
 	}
 }
 
-.main-nav {
-	.header__nav__search {
+#main_nav__search {
 		background-color: #2b2b2b;
 		position: relative;
 		top: 0px;
@@ -117,23 +116,19 @@
 		.input-group {
 			width: 100%;
 		}
-	}
 }
 
-
-#search__glyph__icon__header {
-  background-color: #2b2b2b;
+.search__glyph__icon {
+  &.header {
+	  background-color: #2b2b2b;
+  }
+  &.main_nav {
+	  display: none;
+  }
   .glyphicon-search {
 	  color: #eee;
   }
 }
-
-#search__glyph__icon__main-nav {
-	display: none;
-}
-
-
-
 
 /*------------------------------------*\
     #MOBILE SEARCH
