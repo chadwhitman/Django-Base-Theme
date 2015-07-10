@@ -91,42 +91,6 @@
     #SEARCH OPTION & SEARCH FORM
 \*------------------------------------*/
 
-#top-nav__search-form,
-#main-nav__search-form {
-	position: absolute;
-	top: 21px;
-	right: 0px;
-	.input-group {
-		padding: 10px 15px;
-		width: 250px;
-		background-color: #2b2b2b;
-		@include border-radius(5px);
-	}
-	.input-group-btn:last-child > .btn, 
-	.input-group-btn:last-child > .btn-group {
-		margin-left: 0px;
-	}
-	.input-group-btn {
-		.btn {
-			border-color: $red;
-			background-color: $red;
-			color: #fff;
-		}
-	}
-	@include small {
-		display: block !important;
-		color: #fff;
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		padding-right: 25px;
-		padding-top: 10px;
-		.glyphicon-search {
-			color: #fff;
-		}
-	}
-}
-
 #main-nav__search-option {
   display: none;
 }
@@ -153,6 +117,42 @@ li#top-nav__search-option {
   a {
 	  padding: 1px 8px !important;
   }
+}
+
+#top-nav__search-form,
+#main-nav__search-form {
+	position: absolute;
+	top: 21px;
+	right: 0px;
+	.input-group {
+		padding: 10px 15px;
+		width: 250px;
+		background-color: #2b2b2b;
+		@include border-radius(5px);
+	}
+	.input-group-btn:last-child > .btn, 
+	.input-group-btn:last-child > .btn-group {
+		margin-left: 0px;
+	}
+	.input-group-btn {
+		.btn {
+			border-color: $red;
+			background-color: $red;
+			color: #fff;
+		}
+	}
+	@include small {
+		display: block;
+		color: #fff;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		padding-right: 25px;
+		padding-top: 10px;
+		.glyphicon-search {
+			color: #fff;
+		}
+	}
 }
 
 /*------------------------------------*\
