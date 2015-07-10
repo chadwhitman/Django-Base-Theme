@@ -1,13 +1,26 @@
-/* ==========================================================================
-   Font Colors (based primarily on http://standards.wharton.upenn.edu/color/)
-   ========================================================================== */
+/*****
+ * TABLE OF CONTENTS
+ *
+ * FONT COLORS
+ *   - http://standards.wharton.upenn.edu/color
+ *   - primary
+ *   - secondary
+ *   - accent
+ *   - custom
+ *
+ *****/
+
    
-/** Primary Penn Colors **/
+/*------------------------------------*\
+    #PRIMARY 
+\*------------------------------------*/
 
 $red: #981e32;
 $blue: #002C77;
    
-/** Secondary Penn Colors **/
+/*------------------------------------*\
+    #SECONDARY
+\*------------------------------------*/
   
 $green: #5EB346;
 $violet: #90519B; 
@@ -15,7 +28,9 @@ $skyBlue: #0E76BC;
 $orange: #F3753A;
 $brightRed: #DF524E;
   
-/** Accent Colors **/ 
+/*------------------------------------*\
+    #ACCENT
+\*------------------------------------*/
 
 $darkGray: #686868;
 $lightGray: #AAAAAA;
@@ -24,7 +39,9 @@ $taupe: #DED9C2;
 $offWhite: #F3F3F4;
 
 
-/* Custom Colors */
+/*------------------------------------*\
+    #CUSTOM
+\*------------------------------------*/
 
 $gray: #3d3d3d;
 $lightBlue: #2e55a4;
