@@ -65,7 +65,8 @@
 	}
 }
 
-#search {
+#top-nav__search-form,
+#main-nav__search-form {
 	position: absolute;
 	top: 21px;
 	right: 0px;
@@ -88,11 +89,12 @@
 	}
 }
 
-.main-nav {
-	#search-option {
+
+#main-nav__search-option {
 			display: none;
-	}
-	#search {
+}
+
+#main-nav__search-form {
 		background-color: #2b2b2b;
 		position: relative;
 		top: 0px;
@@ -100,10 +102,10 @@
 		.input-group {
 			width: 100%;
 		}
-	}
 }
 
-#glyph-search {
+
+#top-nav__search-option {
 	background-color: #2b2b2b;
 	.glyphicon-search {
 		color: #eee;

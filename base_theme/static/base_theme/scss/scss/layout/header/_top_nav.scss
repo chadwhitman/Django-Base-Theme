@@ -67,7 +67,7 @@
 	}
 }
 
-#top-red-bar {
+#top-nav__leftbar {
 	background-color: $red;
 	position: relative;
 	width: 375px;
@@ -87,7 +87,7 @@
 	margin-right: -1px;
 }
 
-li#glyph-search {
+li#top-nav__search-option {
 	height: 21px !important;
   a {
 	  padding: 1px 8px !important;
