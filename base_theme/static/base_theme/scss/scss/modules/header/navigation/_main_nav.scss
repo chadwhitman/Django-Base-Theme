@@ -154,10 +154,10 @@ li#top-nav__search-option {
 
 #main-nav__search-form {
 	@include small {
+		top: 40px !important;
 		.input-group {
 			width: 100%;
 		}
-		top: 40px;
 	}
 }
 
