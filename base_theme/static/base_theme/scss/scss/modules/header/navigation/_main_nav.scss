@@ -91,14 +91,7 @@
     #SEARCH OPTION & SEARCH FORM
 \*------------------------------------*/
 
-li#top-nav__search-option {
-	height: 21px !important;
-  a {
-	  padding: 1px 8px !important;
-  }
-}
-
-#top-nav__search-form {
+#search {
 	position: absolute;
 	top: 21px;
 	right: 0px;
@@ -119,36 +112,13 @@ li#top-nav__search-option {
 			color: #fff;
 		}
 	}
-}
-
-#main-nav__search-form {
-	position: absolute;
-	top: 21px;
-	right: 0px;
-	.input-group {
-		padding: 10px 15px;
-		width: 250px;
-		background-color: #2b2b2b;
-		@include border-radius(5px);
-	}
-	.input-group-btn:last-child > .btn, 
-	.input-group-btn:last-child > .btn-group {
-		margin-left: 0px;
-	}
-	.input-group-btn {
-		.btn {
-			border-color: $red;
-			background-color: $red;
-			color: #fff;
-		}
-  }
 }
 
 .main-nav {
-	#main-nav__search-option {
+	#search-option {
 			display: none;
 	}
-	#main-nav__search-form {
+	#search {
 		background-color: #2b2b2b;
 		position: relative;
 		top: 0px;
@@ -159,29 +129,12 @@ li#top-nav__search-option {
 	}
 }
 
-#top-nav__search-option {
+#glyph-search {
 	background-color: #2b2b2b;
 	.glyphicon-search {
 		color: #eee;
 	}
 }
-
-
-@include small {
-	#main-nav__search-form {
-		display: block !important;
-		color: #fff;
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		padding-right: 25px;
-		padding-top: 10px;
-		.glyphicon-search {
-			color: #fff;
-		}
-  }
-}
-
 /*------------------------------------*\
     #CONTEXT SMALL
 \*------------------------------------*/

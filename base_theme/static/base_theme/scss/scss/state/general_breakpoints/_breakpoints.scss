@@ -25,6 +25,20 @@
 	  margin-left: 0px !important;
 	  margin-right: 0px !important;
   }
+  
+  /** Search **/
+  #search-option {
+		display: block !important;
+		color: #fff;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		padding-right: 25px;
+		padding-top: 10px;
+		.glyphicon-search {
+			color: #fff;
+		}
+	}
      
   #header, 
   #banner, 
