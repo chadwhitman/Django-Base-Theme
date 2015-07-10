@@ -53,7 +53,7 @@
 
 /** #(max-width: 680px) **/
 @media screen and (max-width: 680px) {
-	#banner__title {
+	#banner #banner__title {
 	  padding-left: 15px;
 	  padding-top: 25px;
 	  @include font-size(17px);
@@ -62,7 +62,7 @@
 
 /** #(max-width: 500px) **/
 @media screen and (max-width: 500px) {
-	 #banner__title {
+	 #banner #banner__title {
 	  padding-left: 15px;
 	  padding-top: 24px;
 	  @include font-size(11px);
