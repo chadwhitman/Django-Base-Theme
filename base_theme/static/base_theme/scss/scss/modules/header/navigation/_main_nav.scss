@@ -93,6 +93,18 @@
 
 #main-nav__search-option {
   display: none;
+  @include small {
+		display: block;
+		color: #fff;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		padding-right: 25px;
+		padding-top: 10px;
+		.glyphicon-search {
+			color: #fff;
+		}
+	}
 }
 
 #main-nav__search-form {
@@ -120,7 +132,7 @@ li#top-nav__search-option {
 }
 
 #top-nav__search-form,
-#main-nav__search-option {
+#main-nav__search-form {
 	position: absolute;
 	top: 21px;
 	right: 0px;
@@ -138,18 +150,6 @@ li#top-nav__search-option {
 		.btn {
 			border-color: $red;
 			background-color: $red;
-			color: #fff;
-		}
-	}
-	@include small {
-		display: block;
-		color: #fff;
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		padding-right: 25px;
-		padding-top: 10px;
-		.glyphicon-search {
 			color: #fff;
 		}
 	}
