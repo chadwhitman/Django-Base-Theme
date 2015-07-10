@@ -94,7 +94,7 @@
 #main-nav__search-option {
   display: none;
   @include small {
-		display: block;
+		display: block !important;
 		color: #fff;
 		position: absolute;
 		top: 0px;
@@ -112,9 +112,6 @@
 	position: relative;
 	top: 0px;
 	left: 0px;
-	.input-group {
-		width: 100%;
-	}
 }
 
 #top-nav__search-option {
@@ -152,6 +149,15 @@ li#top-nav__search-option {
 			background-color: $red;
 			color: #fff;
 		}
+	}
+}
+
+#main-nav__search-form {
+	@include small {
+		.input-group {
+			width: 100%;
+		}
+		top: 40px;
 	}
 }
 
