@@ -44,14 +44,14 @@
 - <a href="http://gulpjs.com">Gulp Workflow Automation</a>
 
 ### CSS Guidelines & Architecture
-In addition to Bootstrap's syntax and formatting standards, we use the following guides (which we sometimes modify to our needs): 
+We use the following guides: 
 
 - <a href="https://smacss.com/">SMACSS Architecture</a>
 - <a href="http://cssguidelin.es/">cssguidelin.es</a> by <a href="http://csswizardry.com/work">Harry Roberts</a>
 
 ### SASS/SCSS Integration
 
-This project uses the CSS extension language <a href="http://sass-lang.com">SASS</a> (it's very similar to LESS for those familiar with LESS). SASS adds power and organization to your stylesheets.
+This project uses the CSS extension language <a href="http://sass-lang.com">SASS</a> (it's very similar to LESS). SASS adds power and organization to your stylesheets.
 
 SCSS/SASS outputs to CSS via compilers like <a href="http://compass-style.org">Compass</a>, <a href="http://libsass.org">LibSass</a>, <a href="https://incident57.com/codekit">CodeKit</a> or <a href="http://gulpjs.com">Gulp</a>.<a href="http://sass-lang.com"> Learn more about SASS/SCSS</a>. 
 
@@ -59,22 +59,44 @@ Some helpful SASS Mixins included in this theme are:
 
 - REM to px fallback
 - SVG Background-images with PNG and retina fallBack
-- You can see a full (and growing) list of mixins, variables and other SASS helpers <a href="https://github.com/wharton/django-base-theme/tree/master/base_theme/static/base_theme/scss/scss/helpers">here</a>.
+- Breakpoints
+- You can see a full (and growing) list of mixins, variables and other SASS helpers <a href="https://github.com/wharton/django-base-theme/tree/master/base_theme/static/base_theme/scss/scss/helpers/_functions.scss">here</a>.
 
 ### Modifying Settings.py
 
-#### Add the following to the bottom of your settings.py file:
+#### Add the following to your settings.py file:
 
 <pre><code>STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "assets"), #### You can also call this static_dev or whatever name you want
-)
-
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, "static_dev"), 
+    #### You can also call this assets or whatever name you want
 )
 </code></pre>
+
+#### For Django 1.8+, update the following in your settings.py file:
+
+<pre><code>TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['templates'], #### template directory goes here
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]</code></pre>
+
+#### For Django 1.7 and below, just add this to the bottom of your settings file
+
+<pre><code>TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)</code></pre>
 
 #### Add the following to the 'Installed_Apps' section: 
 
@@ -85,7 +107,7 @@ TEMPLATE_DIRS = (
 
 ### PIP installation
 
-<pre><code>pip install git+https://github.com/wharton/Django-Base-Theme</code></pre>
+<pre><code>pip install git+https://github.com/chadwhitman/Django-Base-Theme</code></pre>
 	
 <pre><code>pip install django-bootstrap3</code></pre>
 
@@ -95,7 +117,7 @@ TEMPLATE_DIRS = (
 
 To get the latest updates to the base theme, just run the following command: 
 
-<pre><code>pip install git+https://github.com/wharton/Django-Base-Theme --upgrade</code></pre>
+<pre><code>pip install git+https://github.com/chadwhitman/Django-Base-Theme --upgrade</code></pre>
 
 ### Add custom stylesheets or javascript
 
@@ -103,7 +125,7 @@ To get the latest updates to the base theme, just run the following command:
 
 2.) Create your custom stylesheets and/or javascript files in the assets folder.
 
-3.) Include a link to your custom styles/js. <a href="https://github.com/wharton/django-base-theme/blob/master/base_theme/templates/your_app/base.html">Here is an example</a>.
+3.) Include a link to your custom styles/js. <a href="https://github.com/chadwhitman/django-base-theme/blob/master/base_theme/templates/your_app/base.html">Here is an example</a>.
     
 ### Custom templates and other static files:
 
@@ -139,25 +161,24 @@ templates/
 5.) Note: The layouts (left, right, both, full) extend the original base.html.
 		The original base.html will be in your site-packages directory after you pip install it.
 
-6.) <a href="https://github.com/wharton/django-base-theme/blob/master/base_theme/templates/your_app/base.html">Here is an example of what would go into your app's base.html</a>.
+6.) <a href="https://github.com/chadwhitman/django-base-theme/blob/master/base_theme/templates/your_app/base.html">Here is an example of what would go into your app's base.html</a>.
     
 7.) If you wanted to extend your app's base.html into, say, your app's list.html template, you would just need to make sure your extends path is pointing to your app's base template, like this:
 
 <pre><code>{% extends "your-app/base.html" %}</code></pre>
     
-8.) You can find different layouts for your app <a href="https://github.com/wharton/django-base-theme/tree/master/base_theme/templates">here</a>.  
+8.) You can find different layouts for your app <a href="https://github.com/chadwhitman/django-base-theme/tree/master/base_theme/templates">here</a>.  
            
 ### Utilizing the Django Block System
 
 The <a href="https://docs.djangoproject.com/en/1.8/topics/templates/#template-inheritance">official Django docs</a> do a good job of explaining how template inheritance works and how to utilize the block system.
 
-The following is a list of blocks included in the Django Base Theme that you can use to customize your own template as needed. You can also find them listed in the original base.html template <a href="https://github.com/wharton/django-base-theme/blob/master/base_theme/templates/base.html">here</a>. 
+The following is a list of blocks included in the Django Base Theme that you can use to customize your own template as needed. You can also find them listed in the original base.html template <a href="https://github.com/chadwhitman/django-base-theme/blob/master/base_theme/templates/base.html">here</a>. 
 
 <pre><code>- {% block site_title %} 
 - {% block extra_head_top %}
 - {% block fast_fonts %}
 - {% block head_css %}
-- {% block css_min %}
 - {% block font_awesome %}
 - {% block extra_head_bottom %}
 - {% block header_wrapper %}
@@ -188,16 +209,15 @@ The <a href="http://django-debug-toolbar.readthedocs.org/en/latest/installation.
 
 ### Initial Test View & Url Configuration
 
-This is just an example to get your started:
+#### And to your views
 
 <pre><code>from django.views.generic import TemplateView
 
 class BaseView(TemplateView):
     template_name = "your_app/base.html" 
-    #### Remember to make sure your app's 'url.py' is pointing to your 'base.html' template.
 </code></pre>
     
-### And in your urls.py file:
+#### And to your urls
 
 <pre><code>from project.views import BaseView
 
@@ -209,12 +229,12 @@ urlpatterns = patterns('',
 
 ### Using Gulp to automate your front-end workflow 
 
-Included in this repo is an <a href="https://github.com/wharton/django-base-theme/blob/master/base_theme/static/base_theme/gulpfile.js">example gulpfile</a> (based on: <a href='http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/'>RevSys' Front-end Guide</a>). If you use Gulp, you will need to manually add it to your root directory and customize it to your project's needs. For more info on how to use Gulp go here: <a href="http://gulpjs.com">http://gulpjs.com</a>.
+Included in this repo is an <a href="https://github.com/chadwhitman/django-base-theme/blob/master/base_theme/static/base_theme/gulpfile.js">example gulpfile</a> (based on: <a href='http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/'>RevSys' Front-end Guide</a>). If you use Gulp, you will need to manually add it to your root directory and customize it to your project's needs. For more info on how to use Gulp go here: <a href="http://gulpjs.com">http://gulpjs.com</a>.
 
 ### Contributors
 
 Thank you to our contributors!
 
-* Chad Whitman https://github.com/chadwhitman
-* Tim Allen https://github.com/flipperpa
-* Frank Wiles https://github.com/frankwiles
+* Chad Whitman <a href="https://github.com/chadwhitman">https://github.com/chadwhitman</a>
+* Tim Allen <a href="https://github.com/flipperpa">https://github.com/flipperpa</a>
+* Frank Wiles <a href="https://github.com/frankwiles">https://github.com/frankwiles</a>

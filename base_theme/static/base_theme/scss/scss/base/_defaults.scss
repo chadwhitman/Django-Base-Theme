@@ -16,6 +16,7 @@
  *   - textarea
  *   - helper classes
  *   - clearfix
+ *   - search hide
  * BOOTSTRAP OVERRIDES
  *   - breakpoint
  *   - support-ie10-width
@@ -115,7 +116,12 @@ ul {
   #HEADERS
 \*------------------------------------*/
    
-#{headings()} {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	 margin-bottom: 20px;
 	 word-wrap: break-word;
 	 font-weight: normal; 
@@ -176,7 +182,12 @@ a {
 	}
 }
 
-#{headings()} a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   margin-bottom: 20px;
 	word-wrap: break-word;
 	font-weight: normal; 
@@ -385,6 +396,15 @@ section,
 	}
 }
 
+/*-------------------------------------*\
+  #SEARCH HIDE
+\*-------------------------------------*/
+
+#search,
+.main-nav #search {
+	display: none;
+}
+
 /*------------------------------------------*\
   #CONTAINER PADDING (bootstrap overrides)
 \*-------------------------------------------*/
@@ -397,7 +417,7 @@ main#content .container {
     @include small {
       padding: 0px 10px;
     }
-} 
+}
 
 footer {
 	padding-top: 100px;
