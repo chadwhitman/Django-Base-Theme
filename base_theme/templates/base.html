@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-{% load bootstrap3 %}
 {% load fontawesome %}
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
@@ -15,7 +14,6 @@
     <link rel="icon" href="{% static "base_theme/favicon.ico" %}">
     <title>{% block site_title %}Wharton Shoutouts{% endblock site_title %}</title>
     {% block extra_head_top %}{% endblock extra_head_top %}
-    {% bootstrap_css %}
     {% block head_css %}
         <link href="{% static "base_theme/scss/compiled_css/all.min.css" %}" rel="stylesheet" type="text/css">
         {% block font_awesome %}
@@ -25,14 +23,10 @@
     {% block fast_fonts %}
         <script src="https://fast.fonts.com/jsapi/9c101523-c9e9-4e52-b751-a5b16576f638.js"></script>
     {% endblock fast_fonts %}
-    <script src="{% static "base_theme/js/vendor/modernizr.min.js" %}"></script>
-    <!--[if lt IE 9]>
-       <script src="{% static "base_theme/js/vendor/respond.min.js" %}"></script>
-    <![endif]-->
     {% block extra_head_bottom %}{% endblock extra_head_bottom %}
 </head>
 <body>
-  <!--[if lt IE 7]>
+  <!--[if lte IE 9]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser.
       Please <a href="http://browsehappy.com/">upgrade your browser</a>
       to improve your experience.
@@ -83,7 +77,7 @@
                     <form action="https://www.wharton.upenn.edu/search/" method="get" name="search">
                         <div id="search">
 		                        <div class="input-group">
-		                            <input type="text" value="Search Wharton" class="form-control" name="q">
+		                            <input type="text" placeholder="Search Wharton" class="form-control" name="q">
 		                            <span class="input-group-btn">
 		                                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-arrow-right"></span></button>
 		                            </span>
@@ -168,7 +162,7 @@
                 <form action="https://www.wharton.upenn.edu/search/" method="get" name="search">
 		                <div id="search">
 		                    <div class="input-group">
-		                        <input type="text" value="Search Wharton" class="form-control" name="q">
+		                        <input type="text" placeholder="Search Wharton" class="form-control" name="q">
 		                        <span class="input-group-btn">
 		                            <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-arrow-right"></span></button>
 		                        </span>
@@ -336,12 +330,12 @@
 		        </div><!--/ end col-md-3 -->
 	  	      <div class="col-md-2 social-icons">
 				        <ul class="social-icons__links">
-					          <li class="facebook-icon"><a href="https://www.facebook.com/WhartonSchool"><img src="{% static "base_theme/img/social/facebook-icon.png" %}" width="29" height="29" alt="Facebook"></a></li>
-					          <li class="twitter-icon"><a href="https://www.twitter.com/wharton"><img src="{% static "base_theme/img/social/twitter-icon.png" %}" width="29" height="29" alt="Twitter"></a></li>
-					          <li class="googleplus-icon"><a href="https://plus.google.com/+wharton/posts"><img src="{% static "base_theme/img/social/googleplus-icon.png" %}" width="29" height="29" alt="Google+"></a></li>
-					          <li class="youtube-icon"><a href="https://www.youtube.com/user/thewhartonschool"><img src="{% static "base_theme/img/social/youtube-icon.png" %}" width="29" height="29" alt="YouTube"></a></li>
-					          <li class="flickr-icon"><a href="https://www.flickr.com/photos/thewhartonschool/"><img src="{% static "base_theme/img/social/flickr-icon.png" %}" width="29" height="29" alt="Flickr"></a></li>
-					      </ul><!--/ end ul.social-icons__links -->	
+                              <a href="https://www.facebook.com/WhartonSchool"><li class="facebook-icon"></li></a>
+					          <a href="https://www.twitter.com/wharton"><li class="twitter-icon"></li></a>
+					          <a href="https://plus.google.com/+wharton/posts"><li class="googleplus-icon"></li></a>
+					          <a href="https://www.youtube.com/user/thewhartonschool"><li class="youtube-icon"></li></a>
+					          <a href="https://www.flickr.com/photos/thewhartonschool/"><li class="flickr-icon"></li></a>
+					    </ul><!--/ end ul.social-icons__links -->	
 				        <div id="knowledge-link">
 					          <a href="http://knowledge.wharton.upenn.edu/">
 						            <img src="{% static "base_theme/img/footer/knowledge-for.png" %}"/>
@@ -353,9 +347,9 @@
             <div class="col-md-12">
     	      <ul class="copyright__menu--context-small">
 	   	          <li><a href="http://www.wharton.upenn.edu">Home</a></li>
-			          <li><a href="http://news.wharton.upenn.edu">News</a></li>
-			          <li><a href="http://www.wharton.upenn.edu/contact-us-directories">Contact Wharton</a></li>
-			          <li><a href="http://www.wharton.upenn.edu/locations">Locations</a></li>
+			      <li><a href="http://news.wharton.upenn.edu">News</a></li>
+			      <li><a href="http://www.wharton.upenn.edu/contact-us-directories">Contact Wharton</a></li>
+			      <li><a href="http://www.wharton.upenn.edu/locations">Locations</a></li>
 	          </ul><!--/ end context-small menu -->
 	          <a href="http://www.upenn.edu"><img src="{% static "base_theme/img/footer/Penn-footer-logo.png" alt="UPenn Logo" %}"/></a>
 	          <p>&copy; {% now "Y" %} <a href="http://www.wharton.upenn.edu/">The Wharton School,</a> <a href="http://www.upenn.edu">The University of Pennsylvania</a>
@@ -374,7 +368,6 @@
         ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    {% bootstrap_javascript %}
     <script src="{% static "base_theme/js/all.min.js" %}"></script>
 {% endblock footer_js %}
 {% block extra_footer_js %}{% endblock extra_footer_js %}

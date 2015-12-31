@@ -9,4 +9,4 @@
 
     Title: Django Base Theme
     Version: 1.0
-    Components/Standards: HTML5, CSS3, SASS/SCSS, Twitter Bootstrap, HTML5 Boilerplate, Normalize.css, jQuery, Modernizr, respond.js, Gulp, Font Awesome
+    Components/Standards: HTML5, CSS3, SASS/SCSS, Twitter Bootstrap 3, HTML5 Boilerplate, Normalize.css, jQuery, Modernizr, Gulp, Font Awesome

@@ -6,7 +6,10 @@
 ### Table of Contents
 - Components & Standards
 - CSS Guidelines & Architecture
+- Browser Support
+- Performance
 - SASS/SCSS Integration
+- Using Gulp to automate your front-end workflow
 - Modifying Settings.py
 	- Adding Directories
 	- Adding Installed Apps
@@ -21,9 +24,7 @@
 - Utilizing the Django Block System
 	- A list of blocks available with base-theme
 - Adding Django Debug Toolbar
-- Example test view & url configuration
-- Example url.py file
-- Using Gulp to automate your front-end workflow
+- Example View & URL Dispatcher
 - List of Contributors
 	
 ### Components & Standards: 
@@ -38,7 +39,6 @@
 - <a href="http://sass-lang.com">SASS/SCSS</a>
 - <a href="https://jquery.com">jQuery</a>
 - <a href="http://modernizr.com">Modernizer.js</a>
-- <a href="https://github.com/scottjehl/Respond">Respond.js</a>
 - <a href="http://fortawesome.github.io/Font-Awesome">Font Awesome</a>
 - <a href="http://www.fonts.com">Custom fonts served via Fonts.com</a>
 - <a href="http://gulpjs.com">Gulp Workflow Automation</a>
@@ -49,18 +49,39 @@ We use the following guides:
 - <a href="https://smacss.com/">SMACSS Architecture</a>
 - <a href="http://cssguidelin.es/">cssguidelin.es</a> by <a href="http://csswizardry.com/work">Harry Roberts</a>
 
+### Browser Support
+At present, we officially aim to support the following browsers:
+
+- IE10, IE11, MS Edge
+- The latest version of Chrome, Firefox, Safari & Opera
+- The latest version of Safari & Chrome for iOS
+- The latest version of Chrome for Android
+- Find out if you are using the most up-to-date browser at <a href="http://whatbrowser.org">http://whatbrowser.org</a> or <a href="http://browsehappy.com">http://browsehappy.com</a>.
+
+This is not to say that Django Base Theme cannot be used in browsers older than those reflected, but that the best experience and our development focus will be on those browsers listed above.
+
+### Performance
+
+Base Theme strives for fast page load times. Not including server configuration enhancements, Base Theme's default template scores a grade of "A" in every category via <a href="http://yslow.org">YSlow's</a> web page analyzer. Our median <a href="http://www.webpagetest.org">Web Page Test</a> scores for the default template have a Speed Index of ~1450 (we are working on getting it down to ~1000, which is ideal).
+
 ### SASS/SCSS Integration
 
-This project uses the CSS extension language <a href="http://sass-lang.com">SASS</a> (it's very similar to LESS). SASS adds power and organization to your stylesheets.
+This project uses the CSS extension language <a href="http://sass-lang.com">SASS</a>. SASS adds power and organization to your stylesheets.
 
 SCSS/SASS outputs to CSS via compilers like <a href="http://compass-style.org">Compass</a>, <a href="http://libsass.org">LibSass</a>, <a href="https://incident57.com/codekit">CodeKit</a> or <a href="http://gulpjs.com">Gulp</a>.<a href="http://sass-lang.com"> Learn more about SASS/SCSS</a>. 
 
 Some helpful SASS Mixins included in this theme are:
 
-- REM to px fallback
-- SVG Background-images with PNG and retina fallBack
+- Flexbox
 - Breakpoints
-- You can see a full (and growing) list of mixins, variables and other SASS helpers <a href="https://github.com/wharton/django-base-theme/tree/master/base_theme/static/base_theme/scss/scss/helpers/_functions.scss">here</a>.
+- REM to PX fallback & Viewport to REM to PX fallback
+- SVG Background-images with PNG and retina fallBack
+- RGBA Background, Vertical Align, Horizontal Align, etc.
+- You can see a full list of mixins, variables and other SASS helpers <a href="https://github.com/chadwhitman/django-base-theme/tree/master/base_theme/static/base_theme/scss/scss/helpers/_functions.scss">here</a>.
+
+### Using Gulp to automate your front-end workflow 
+
+Included in this repo is an <a href="https://github.com/chadwhitman/django-base-theme/blob/master/base_theme/static/base_theme/gulpfile.js">example gulpfile</a> (based on: <a href='http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/'>RevSys' Front-end Guide</a>). If you use Gulp, you will need to manually add it to your root directory and customize it to your project's needs. For more info on how to use Gulp go here: <a href="http://gulpjs.com">http://gulpjs.com</a>.
 
 ### Modifying Settings.py
 
@@ -73,8 +94,6 @@ STATICFILES_DIRS = (
     #### You can also call this assets or whatever name you want
 )
 </code></pre>
-
-#### For Django 1.8+, update the following in your settings.py file:
 
 <pre><code>TEMPLATES = [
     {
@@ -91,12 +110,6 @@ STATICFILES_DIRS = (
         },
     },
 ]</code></pre>
-
-#### For Django 1.7 and below, just add this to the bottom of your settings file
-
-<pre><code>TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)</code></pre>
 
 #### Add the following to the 'Installed_Apps' section: 
 
@@ -217,19 +230,14 @@ class BaseView(TemplateView):
     template_name = "your_app/base.html" 
 </code></pre>
     
-#### And to your urls
+#### URL Dispatcher
 
 <pre><code>from project.views import BaseView
-
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^$', BaseView.as_view(), name='home'),
     url(r'^admin/', include(admin.site.urls)),
-)
+]
 </code></pre>
-
-### Using Gulp to automate your front-end workflow 
-
-Included in this repo is an <a href="https://github.com/chadwhitman/django-base-theme/blob/master/base_theme/static/base_theme/gulpfile.js">example gulpfile</a> (based on: <a href='http://www.revsys.com/blog/2014/oct/21/ultimate-front-end-development-setup/'>RevSys' Front-end Guide</a>). If you use Gulp, you will need to manually add it to your root directory and customize it to your project's needs. For more info on how to use Gulp go here: <a href="http://gulpjs.com">http://gulpjs.com</a>.
 
 ### Contributors
 

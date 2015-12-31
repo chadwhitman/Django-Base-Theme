@@ -43,8 +43,8 @@ setup(
     ],
     license='BSD License',
     description="A responsive front-end boilerplate designed for Wharton Django/Python apps.",
-    url='https://github.com/wharton/django-base-theme/',
-    author='Chad Whitman, the Wharton School',
+    url='https://github.com/chadwhitman/Django-Base-Theme',
+    author='Chad Whitman',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',

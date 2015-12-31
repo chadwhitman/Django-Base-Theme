@@ -1,48 +1,28 @@
 /*****
  * TABLE OF CONTENTS
  *
- * MEDIA QUERIES
- *    - x-small
- *    - small
- *    - medium 
- *    - large
- *    - x-large
- *
- * REM to PIXEL 
- *
- * CROSS BROWSER OPACITY
- *
- * BORDER RADIUS
- *
- * TRANSITIONS
+ * Media Queries
+ * Rem to Pixel fallback
+ * Viewport to REM to PX fallback
+ * Cross browser opacity
+ * Border Radius
+ * Transitions
+ * Border-box
+ * Font-smoothing
+ * Box Shadow
+ * Gradient
+ * Bootstrap Glyphs
+ * Fontawesome
+ * Calculate Width
+ * Line height
+ * Absolute positioning
+ * Margin & Padding
+ * Aspect Ratio
+ * RGBA Background
+ * Animation
+ * Vertical Align
+ * Horizontal Align
  * 
- * BORDER-BOX
- * 
- * FONT SMOOTHING
- *
- * BOX SHADOW
- *
- * GRADIENT
- *
- * BOOTSTRAP GLYPHS
- *
- * CALCULATE WIDTH
- *
- * LINE HEIGHT
- *
- * ABSOLUTE POSITIONING
- *
- * MARGIN & PADDING
- *
- * ASPECT RATIO
- *
- * RGBA BACKGROUND
- *
- * ANIMATION
- * 
- * VERTICAL ALIGN
- * 
- *
  *****/
 
 /*------------------------------------*\
@@ -79,6 +59,18 @@
   }
 }
 
+@mixin context($width) {
+    @media only screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin min-max($min, $max) {
+    @media only screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
 /*------------------------------------*\
     #REM to PIXEL FALLBACK
 \*------------------------------------*/
@@ -91,6 +83,21 @@
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
+}
+
+/*------------------------------------*\
+    #Viewport to REM to PX fallback
+\*------------------------------------*/
+   
+@function get-vw($target) { 
+  $vw-context: (1000*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+@mixin vw($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+  font-size: get-vw($size);
 }
 
 /*------------------------------------*\
@@ -108,7 +115,7 @@
 \*------------------------------------*/
 
 @mixin border-radius($radius) {
-	 -webkit-border-top: $radius;
+    -webkit-border-top: $radius;
 	-webkit-border-top: $radius;
 	-moz-border-radius: $radius;
 	-moz-border-radius: $radius;
@@ -188,6 +195,33 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	@include border-box;
+}
+
+/*------------------------------------*\
+    #FONTAWESOME GLYPHS
+\*------------------------------------*/
+
+@mixin fawesome($content) {
+	content: $content;
+	position: relative;
+	display: inline-block;
+	font-style: normal;
+	font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-feature-settings: normal;
+    font-language-override: normal;
+    font-kerning: auto;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	font: normal normal normal 14px/1 FontAwesome;
 }
 
 /*------------------------------------*\
@@ -291,4 +325,16 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+/*------------------------------------*\
+    #HORIZONTAL ALIGN
+\*------------------------------------*/
+
+@mixin horizontal-align($position) {
+  position: $position;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
